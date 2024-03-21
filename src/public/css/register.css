@@ -1,0 +1,23 @@
+.register-form{
+    border: 0 0 0;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 25%;
+    height: 20%;
+    /* text-align: center; */
+    margin:50px auto;
+}
+
+.register-form__head-title{
+    background-color: rgb(58, 58, 247);
+    color:#fff;
+    border-radius: 5px 5px 0 0;
+    line-height: 50px;
+    padding-left: 20px;
+
+}
+
+.register-form__input{
+    border: hidden;
+    border-bottom: 1px solid rgb(105, 105, 105);
+}
