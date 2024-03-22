@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-2')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/register.css') }}">
@@ -6,12 +6,12 @@
 
 @section('content')
 <div class="register-form">
-    <p class="register-form__head-title">Register</p>
+    <p class="register-form__head-title">Registration</p>
     <div class="register-form__inner">
         <form class="register-form__form" action="/register" method="post">
             @csrf
             <div class="register-form__group">
-                <img src="/Users/hasegawatakanori/coachtech/laravel/reservation-system/src/resources/views/auth/img/user.png" alt="user-icon">
+                <img src="img/user.png" alt="user-icon" width="25px" height="25px">
                 <input class="register-form__input" type="text" name="name" id="name" placeholder="Username" value="{{ old('name') }}">
                 <p class="register-form__error-message">
                     @error('name')
@@ -20,7 +20,7 @@
                 </p>
             </div>
             <div class="register-form__group">
-                <img src="src/resources/views/auth/img/email.png" alt="email-icon">
+                <img src="img/email.png" alt="email-icon" width="25px" height="25px">
                 <input class="register-form__input" type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}">
                 <p class="register-form__error-message">
                     @error('email')
@@ -29,7 +29,7 @@
                 </p>
             </div>
             <div class="register-form__group">
-                <img src="img/password.png" alt="password-icon">
+                <img src="img/password.png" alt="password-icon" width="25px" height="25px">
                 <input class="register-form__input" type="password" name="password" id="Password" placeholder="パスワード">
                 <p class="register-form__error-message">
                     @error('password')
@@ -45,7 +45,9 @@
                     @enderror
                 </p>
             </div> -->
-            <input class="register-form__btn" type="submit" value="会員登録">
+            <div class="register-form__btn">
+            <input class="register-form__btn-submit" type="submit" value="登録">
+            </div>
         </form>
         <!-- <div class="login-transition__form">
             <p class="login-nav">アカウントをお持ちの方はこちらから</p>
