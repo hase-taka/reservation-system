@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ReservationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/thanks', [AuthController::class,'thanks']);
+Route::get('/done', [AuthController::class,'done']);
+
+Route::get('/',[ReservationController::class,'index']);

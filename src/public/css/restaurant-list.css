@@ -1,0 +1,46 @@
+.search-form{
+    width:45%;
+}
+.search-form__inner{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgb(119, 118, 118);
+    background-color: #fff;
+    height:40px;
+}
+
+.search-form__area-name{
+    
+}
+
+.area-name__select,.genre-name__select,.restaurant-name__item{
+    border: none;
+    background-color: #fff;
+}
+.area-name__select,
+.genre-name__select{
+    border-right: 1px solid grey;
+    padding-right: 10px;
+}
+
+.area-name__select:first-child,.genre-name__select:first-child{
+    /* color: grey; */
+}
+
+.search-icon{
+    color: gray;
+    margin-left: 10px;
+}
+.favorite-btn {
+    color: grey;
+    /* デフォルトの色 */
+    cursor: pointer;
+    /* カーソルをポインターに変更 */
+}
+
+.favorite-btn.clicked {
+    color: red;
+    /* クリック時の色 */
+}
