@@ -6,10 +6,15 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#favoriteButton').click(function() {
+            $('.favorite-btn').click(function() {
                 $(this).toggleClass('clicked');
             });
         });
+        // $(document).ready(function() {
+        //     $('#favoriteButton').click(function() {
+        //         $(this).toggleClass('clicked');
+        //     });
+        // });
     </script>
 @endsection
 
@@ -41,21 +46,24 @@
         </div>
     </form>
 </div>
+<div class="restaurant-list-card__wrap">
 @foreach($restaurants as $restaurant)
-<div class="restaurant-list-card">
-    <div class="restaurant-list-card__img">
-        <img src="{{ $restaurant->img_url}}" alt="店舗画像">
+    <div class="restaurant-list-card">
+        <div class="restaurant-list-card__img">
+            <img src="{{ $restaurant->img_url}}" alt="店舗画像" >
+        </div>
+        <div class="restaurant-list-card__content">
+            <p class="restaurant-list-card__content-name">{{ $restaurant->name }}</p>
+        </div>
+        <div class="restaurant-list-card__content-tag">
+            <p class="restaurant-list-card__content-tag-item">#{{ $restaurant->area->area_name }}</p>
+            <p class="restaurant-list-card__content-tag-item">#{{ $restaurant->genre->genre_name }}</p>
+        </div>
+        <div class="restaurant-list-card__content-btn">
+            <a class="restaurant-detail__btn" href="">詳しくみる</a>
+            <i class="fa-solid fa-heart fa-xl favorite-btn" data-restaurant-id="{{ $restaurant->id }}" id="favoriteButton"></i>
+        </div>
     </div>
-    <div class="restaurant-list-card__content">
-        <p class="restaurant-list-card__content-name">{{ $restaurant->name }}</p>
-    </div>
-    <div class="restaurant-list-card__content-tag">
-        <p class="restaurant-list-card__content-tag-item">#{{ $restaurant->area->area_name }}</p>
-        <p class="restaurant-list-card__content-tag-item">#{{ $restaurant->genre->genre_name }}</p>
-    </div>
-    <div class="restaurant-list-card__content-btn">
-        <a class="restaurant-detail__btn" href="">詳しくみる</a>
-        <i class="fa-solid fa-heart favorite-btn" data-restaurant-id="{{ $restaurant->id }}" id="favoriteButton"></i>
-</div>
 @endforeach
+</div>
 @endsection

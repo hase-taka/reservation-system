@@ -36,7 +36,7 @@
             <li><a href="">Logout</a></li>
             <li><a href="/mypage">Mypage</a></li>
         </ul>
-        
+        @yield('header')
     </header>
     <main class="main">
         <div class="main__inner">
