@@ -36,7 +36,7 @@ body {
     border-radius: 5px;
     background-color: rgb(58, 58, 247);
     box-shadow: 2px 2px 5px rgb(119, 118, 118);
-    margin-left: 5%;
+    margin-left: 4.5%;
 
 }
 
@@ -88,12 +88,12 @@ body {
 } */
 
 .slide-menu {
-    margin-top: 12%;
+    margin-top: 12% ;
     background-color:#fff;
     position: fixed;
     top: 65px;
     width: 100%;
-    left: 0;
+    left: -20px;
     transform: translateX(100%);
 }
 
@@ -103,6 +103,18 @@ body {
     line-height: 250%;
     text-align: center;
     list-style: none;
+}
+.logout-btn{
+    border: none;
+        /* ボーダーを削除 */
+        background: none;
+        /* 背景を透明に */
+        cursor: pointer;
+        /* カーソルをポインターに */
+        outline: none;
+        font-size: 35px;
+        font:inherit;
+        color: rgb(58, 58, 247);
 }
 
 .slide-menu a{
@@ -134,11 +146,12 @@ body {
 
 .slide-menu.active {
     transform: translateX(0);
+    margin: 12% 0 0 0;
 }
 
 .hamburger.active{
     margin-top: 91px;
-    margin-left: 5%;
+    margin-left: 4.45%;
 }
 
 body.active{
