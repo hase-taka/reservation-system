@@ -33,8 +33,8 @@
         </div>
         <ul class="slide-menu">
             <li><a href="/">Home</a></li>
-            <li><a href="">Registration</a></li>
-            <li><a href="/mypage">Login</a></li>
+            <li><a href="/register">Registration</a></li>
+            <li><a href="/login">Login</a></li>
         </ul>
         
     </header>

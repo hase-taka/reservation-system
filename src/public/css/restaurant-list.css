@@ -53,11 +53,13 @@
     margin-left: 10px;
 }
 .favorite-btn {
-    color: rgb(216, 216, 216);
-    /* デフォルトの色 */
-    cursor: pointer;
-    /* カーソルをポインターに変更 */
-    align-self: center;
+    border: none;
+        /* ボーダーを削除 */
+        background: none;
+        /* 背景を透明に */
+        cursor: pointer;
+        /* カーソルをポインターに */
+        outline: none;
 }
 
 .favorite-btn.clicked {

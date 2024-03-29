@@ -21,6 +21,7 @@ class FortifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
+        
     }
 
     /**
@@ -37,6 +38,12 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::loginView(function () {
             return view('auth.login');
         });
+
+        //   Fortify::logoutOtherDevicesInRequest();
+        // Fortify::logoutAfterResponse(function ($request) {
+        //     return redirect('/login');
+        // });
+        
 
         RateLimiter::for('login', function (Request $request) {
             $email = (string) $request->email;

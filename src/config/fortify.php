@@ -15,7 +15,7 @@ return [
     | guards that is already present in your "auth" configuration file.
     |
     */
-
+    
     'guard' => 'web',
 
     /*
@@ -143,6 +143,22 @@ return [
     | these features or you can even remove all of these if you need to.
     |
     */
+    'redirects' => [
+        
+        // 'logout' => '/login',
+        'password-confirmation' => null,
+        'registered' => '/thanks',
+        'email-verification' => null,
+    ],
+    'registered' => [
+    'redirectTo' => '/thanks',
+],
+//     'logout' => [
+//     'redirectTo' => '/login',
+// ],
+    'verification' => [
+    'enabled' => false,
+],
 
     'features' => [
         Features::registration(),
@@ -155,6 +171,7 @@ return [
             'confirmPassword' => false,
             // 'window' => 0,
         ]),
+        
     ],
 
 ];
