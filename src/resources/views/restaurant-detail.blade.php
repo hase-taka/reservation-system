@@ -38,10 +38,12 @@
     </div>
     <div class="reservation-form">
         <p class="reservation-form__title">予約</p>
-        <form class="reservation-form__inner" action="" id="reservationForm">
+        <form class="reservation-form__inner" action="/reservation" method="post" id="reservationForm">
+            @csrf
             <div clasS="reservation-form__item">
-                <input class="reservation-form__item-input-date" type="date" id="dateInput"  placeholder="Enter date" >
-                <input class="reservation-form__item-input"  type="time" id="timeInput" name="name"  placeholder="Enter time" step="600">
+                <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}">
+                <input class="reservation-form__item-input-date" type="date" id="dateInput"  name="date" placeholder="Enter date" >
+                <input class="reservation-form__item-input"  type="time" id="timeInput" name="time"  placeholder="Enter time" step="600">
                 <input class="reservation-form__item-input"  type="number" id="partySizeInput" name ="partySize" min="0" placeholder="人数" oninput="displayInput()">
             </div>
             <div class="reservation-confirm">

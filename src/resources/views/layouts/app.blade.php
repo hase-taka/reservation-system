@@ -34,7 +34,7 @@
         <ul class="slide-menu">
             <li><a href="/">Home</a></li>
             <li><form  action="{{ route('logout') }}" method="post">@csrf<button class="logout-btn" type="submit">Logout</button></form></li>
-            <li><a href="/mypage">Mypage</a></li>
+            <li><a href="/my_page">Mypage</a></li>
         </ul>
         @yield('header')
     </header>
