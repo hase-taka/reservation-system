@@ -87,7 +87,10 @@
     border: none;
     line-height: 23px;
 }
-
+.error-message{
+    margin:1% 0 0 3%;
+    color: #fff;
+}
 
 
 .reservation-confirm__inner{
@@ -114,6 +117,7 @@
 
 .reservation-btn{}
 .reservation-btn__submit{
+    position: absolute;
     width: 100%;
     background-color: rgb(22, 70, 243);
     border-radius: 0 0 5px 5px ;
@@ -122,4 +126,8 @@
     line-height: 40px;
     margin-top: 50%;
     cursor:pointer;
+    top: 50%;
+   
+    
+    /* 左方向に20px移動 */
 }

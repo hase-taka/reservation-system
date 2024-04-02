@@ -37,11 +37,11 @@
     border-right: 1px solid grey;
     padding-right: 10px;
     margin: 0 0 0 15px;
-    width: 100px;
+    width: 93%;
 }
 
 .restaurant-name__item{
-    width: 300px;
+    width: 79%;
 }
 
 .area-name__select:first-child,.genre-name__select:first-child{

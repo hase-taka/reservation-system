@@ -167,3 +167,42 @@
     margin-right: 10%;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.modal {
+    display: none;
+    /* 初期状態では非表示 */
+    position: fixed;
+    /* モーダルがスクロールに追従 */
+    z-index: 1;
+    /* モーダルが他の要素の上に表示される */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* スクロールバーを有効にする */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* 背景を半透明にする */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    /* モーダル内のコンテンツの背景色 */
+    margin: 15% auto;
+    /* 上部から15%、横方向は自動マージン */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* コンテンツの幅 */
+}
