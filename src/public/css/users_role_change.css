@@ -1,0 +1,42 @@
+.role-change__title{
+    text-align: center;
+}
+
+.user-role__table{
+    border-radius: 5px;
+    background-color: rgb(63, 102, 242);
+    width: 45%;
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+.user-role__table-inner{
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+}
+.user-role__table-item{
+    margin: 10%;
+}
+.role-table__row{
+    line-height: 50px;
+    border-bottom: 1px solid;
+}
+.role-table__head-id, .role-table__head-btn{
+    width: 20%;
+}
+.role-table__head{
+    width: 34%;
+}
+.role-table__data{}
+
+.role-change__btn{
+    background-color: rgb(22, 70, 243);
+        border: 1px solid;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 14px;
+        margin: 3% auto 5%;
+        text-align: center;
+        display: block;
+        cursor:pointer;
+}
