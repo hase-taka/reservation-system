@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_admin')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/reservation_edit.css') }}">
@@ -58,8 +58,8 @@
                         <td class="edit-form__data"><input class="edit-form__item-input" type="date" name="date"></td>
                     </tr>
                     @if ($errors->has('date'))
-                    <div class="error-message">
-                        <tr >
+                    <div>
+                        <tr>
                             <td class="error-message" colspan="2">
                                 {{$errors->first('date')}}
                             </td>
@@ -71,7 +71,7 @@
                         <td class="edit-form__data"><input class="edit-form__item-input" name="time" type="time" step="600"></td>
                     </tr>
                     @if ($errors->has('time'))
-                    <div class="error-message">
+                    <div >
                         <tr>
                             <td class="error-message" colspan="2">
                                 {{$errors->first('time')}}
@@ -79,17 +79,17 @@
                         </tr>
                     </div>
                     @endif
-                    <tr>
-                        <td class="error-message" colspan="2">
-                        {{session('error')}}
-                        </td>
-                    </tr>
+                    @if(session('error'))
+                        <div class="error-message">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     <tr class="edit-form__row">
                         <td class="edit-form__head">Number</td>
                         <td class="edit-form__data"><input class="edit-form__item-input" name="number" type="number" min="1"></td>
                     </tr>
                     @if ($errors->has('number'))
-                    <div class="error-message">
+                    <div >
                         <tr >
                             <td class="error-message" colspan="2">
                                 {{$errors->first('number')}}

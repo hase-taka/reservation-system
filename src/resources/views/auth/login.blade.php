@@ -2,6 +2,11 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/login.css')}}">
+<style>
+.login-form__error-message{
+  color:rgb(22, 70, 243);
+}
+</style>
 @endsection
 
 @section('content')
@@ -14,28 +19,28 @@
                 <img src="img/user.png" alt="user-icon" width="25px" height="25px">
                 <input class="login-form__input" type="mail" name="email" id="email" placeholder="メールアドレス" >
                 <div class="login-form__error-message">
-                    <!-- @error('email')
+                    @error('email')
                     {{ $message }}
-                    @enderror -->
-                    @if ($errors->has('email'))
+                    @enderror
+                    <!-- @if ($errors->has('email'))
                   <span class="invalid-feedback" role="alert">
                     {{ $errors->first('email') }}
                   </span>
-                @endif
+                @endif -->
                 </div>
             </div>
             <div class="login-form__group">
                 <img src="img/password.png" alt="password-icon" width="25px" height="25px">
                 <input class="login-form__input" type="password" name="password" id="password" placeholder="パスワード">
                 <div class="login-form__error-message">
-                    <!-- @error('password')
+                    @error('password')
                     {{ $message }}
-                    @enderror -->
-                    @if ($errors->has('error'))
+                    @enderror
+                    <!-- @if ($errors->has('error'))
                   <span class="invalid-feedback" role="alert">
                     {{ $errors->first('error') }}
                   </span>
-                @endif
+                @endif -->
                 </div>
             </div>
             <div  class="login-form__btn">

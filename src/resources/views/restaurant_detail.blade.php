@@ -2,15 +2,6 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/restaurant-detail.css') }}">
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.favorite-btn').click(function() {
-                $(this).toggleClass('clicked');
-            });
-        }); -->
-    <!-- </script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
 
@@ -43,12 +34,43 @@
             <div clasS="reservation-form__item">
                 <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}">
                 <input class="reservation-form__item-input-date" type="date" id="dateInput"  name="date" placeholder="Enter date" >
+                @if ($errors->has('date'))
+                <div class="error-message">
+                    <tr>
+                        <td >
+                            {{$errors->first('date')}}
+                        </td>
+                    </tr>
+                </div>
+                @endif   
                 <input class="reservation-form__item-input"  type="time" id="timeInput" name="time"  placeholder="Enter time" step="600">
-                <input class="reservation-form__item-input"  type="number" id="partySizeInput" name ="partySize" min="0" placeholder="人数" oninput="displayInput()">
+                @if ($errors->has('time'))
+                <div class="error-message">
+                    <tr>
+                        <td >
+                            {{$errors->first('time')}}
+                        </td>
+                    </tr>
+                </div>
+                @endif   
+                <input class="reservation-form__item-input"  type="number" id="partySizeInput" name ="number" min="1" placeholder="人数" oninput="displayInput()">
+                @if ($errors->has('number'))
+                <div class="error-message">
+                    <tr class="error-message">
+                        <td>
+                            {{$errors->first('number')}}
+                        </td>
+                    </tr>
+                </div>
+                @endif   
             </div>
             <div class="reservation-confirm">
                 <div class="reservation-confirm__inner" id="displayArea"></div>
             </div>
+            <div class="reservation-btn">
+            <button class="reservation-btn__submit" type="submit">予約する</button>
+        </div>
+        </form>
             <script>
         // ページ読み込み時に確認情報を表示する関数
         $(document).ready(function() {
@@ -66,7 +88,7 @@
 
             $('#displayArea').html(confirmationHTML);
         });
-    </script>
+        </script>
             <script>
             // 入力データを表示する関数
             function displayInput() {
@@ -87,10 +109,6 @@
                 $('#dateInput, #timeInput, #partySizeInput').on('input', displayInput);
             });
         </script>
-        <div class="reservation-btn">
-            <button class="reservation-btn__submit" type="submit">予約する</button>
-        </div>
-        </form>
     </div>
 </div>
 @endsection

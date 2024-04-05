@@ -2,6 +2,12 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+
+<style>
+.register-form__error-message{
+    color:rgb(22, 70, 243);
+}
+</style>
 @endsection
 
 @section('content')
