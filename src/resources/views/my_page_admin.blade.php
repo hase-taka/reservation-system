@@ -109,11 +109,11 @@ $(document).ready(function() {
             <div class="reservation-status__inner">
                 <div class="reservation-table__header">
                     <div class="reservation-number">
-                        <img class="clock-img" src="img/clock2.png" alt="clock-icon" width="25px" height="25px">
+                        <img class="clock-img" src="images/clock2.png" alt="clock-icon" width="25px" height="25px">
                         <p class="reservation-number__inner">予約 {{ $index + 1 }}</p>
                     </div>
                     <div class="reservation__cancel-btn">
-                        <button class="btn btn-danger cancel-reservation" data-reservation-id="{{ $reservation->id }}"><img src="img/cancel.png" alt="cancel-icon" width="25px" height="25px"></button>
+                        <button class="btn btn-danger cancel-reservation" data-reservation-id="{{ $reservation->id }}"><img src="images/cancel.png" alt="cancel-icon" width="25px" height="25px"></button>
                         <!-- <button class="reservation__cancel-btn__submit"><img src="img/cancel.png" alt="cancel-icon" width="25px" height="25px"></button> -->
                     </div>
                 </div>

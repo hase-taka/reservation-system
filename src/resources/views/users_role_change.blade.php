@@ -214,7 +214,7 @@ $(document).ready(function() {
                 <p class="now-role__inner" id="current-role"></p>
             </div>
             <div class="arrow-img">
-                <img src="/img/arrow.png" alt="arrow-icon" width="50px" height="50px">
+                <img src="/images/arrow.png" alt="arrow-icon" width="50px" height="50px">
             </div>
             <div class="new-role">
                 <p class="new-role__inner-head">新たな役割</p>

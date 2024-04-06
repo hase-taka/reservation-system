@@ -17,7 +17,7 @@
         <form class="register-form__form" action="/register" method="post">
             @csrf
             <div class="register-form__group">
-                <img src="img/user.png" alt="user-icon" width="25px" height="25px">
+                <img src="images/user.png" alt="user-icon" width="25px" height="25px">
                 <input class="register-form__input" type="text" name="name" id="name" placeholder="Username" value="{{ old('name') }}">
                 <p class="register-form__error-message">
                     @error('name')
@@ -26,7 +26,7 @@
                 </p>
             </div>
             <div class="register-form__group">
-                <img src="img/email.png" alt="email-icon" width="25px" height="25px">
+                <img src="images/email.png" alt="email-icon" width="25px" height="25px">
                 <input class="register-form__input" type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}">
                 <p class="register-form__error-message">
                     @error('email')
@@ -35,7 +35,7 @@
                 </p>
             </div>
             <div class="register-form__group">
-                <img src="img/password.png" alt="password-icon" width="25px" height="25px">
+                <img src="images/password.png" alt="password-icon" width="25px" height="25px">
                 <input class="register-form__input" type="password" name="password" id="Password" placeholder="パスワード">
                 <p class="register-form__error-message">
                     @error('password')

@@ -109,7 +109,17 @@
 @foreach($restaurants as $restaurant)
     <div class="restaurant-list-card">
         <div class="restaurant-list-card__img">
-            <img src="{{ $restaurant->img_url}}" alt="店舗画像" >
+            @if($restaurant->img_url)
+                <img src="{{ $restaurant->img_url }}" alt="店舗画像">
+            @elseif($restaurant->file_path)
+                <img src="{{ asset($restaurant->file_path) }}" alt="Restaurant Image">
+            @else
+                <img src="images/no_image.jpeg" alt="No Image">
+            @endif
+            
+            
+
+
         </div>
         <div class="restaurant-list-card__content">
             <p class="restaurant-list-card__content-name">{{ $restaurant->name }}</p>

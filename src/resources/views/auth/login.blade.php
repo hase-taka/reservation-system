@@ -16,7 +16,7 @@
         <form class="login-form__form" action="/login" method="post">
         @csrf
             <div class="login-form__group">
-                <img src="img/user.png" alt="user-icon" width="25px" height="25px">
+                <img src="images/user.png" alt="user-icon" width="25px" height="25px">
                 <input class="login-form__input" type="mail" name="email" id="email" placeholder="メールアドレス" >
                 <div class="login-form__error-message">
                     @error('email')
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="login-form__group">
-                <img src="img/password.png" alt="password-icon" width="25px" height="25px">
+                <img src="images/password.png" alt="password-icon" width="25px" height="25px">
                 <input class="login-form__input" type="password" name="password" id="password" placeholder="パスワード">
                 <div class="login-form__error-message">
                     @error('password')
