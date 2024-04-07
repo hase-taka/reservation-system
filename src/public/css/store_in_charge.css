@@ -1,0 +1,130 @@
+/* .header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5%;
+    align-self: center;
+} */
+.header {}
+
+.search-form {
+    width: 44%;
+    position: absolute;
+    top: 6%;
+    right: 5.5%;
+}
+
+.search-form__inner {
+    display: flex;
+
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgb(119, 118, 118);
+    background-color: #fff;
+    height: 40px;
+}
+
+.search-form__area-name {}
+
+.area-name__select,
+.genre-name__select,
+.restaurant-name__item {
+    border: none;
+    background-color: #fff;
+}
+
+.area-name__select,
+.genre-name__select {
+    border-right: 1px solid grey;
+    padding-right: 10px;
+    margin: 0 0 0 15px;
+    width: 93%;
+}
+
+.restaurant-name__item {
+    width: 79%;
+}
+
+.area-name__select:first-child,
+.genre-name__select:first-child {
+    /* color: grey; */
+}
+
+.search-icon {
+    color: gray;
+    margin-left: 10px;
+}
+
+.favorite-btn {
+    border: none;
+    /* ボーダーを削除 */
+    background: none;
+    /* 背景を透明に */
+    cursor: pointer;
+    /* カーソルをポインターに */
+    outline: none;
+}
+
+.favorite-btn.clicked {
+    color: red;
+    /* クリック時の色 */
+}
+
+
+
+.restaurant-list-card {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgb(119, 118, 118);
+    margin: 0 0.8% 30px 0.8%;
+}
+
+.restaurant-list-card__content-name {
+    font-weight: bold;
+    line-height: 20px;
+    margin: 15px 0 0 20px;
+}
+
+.restaurant-list-card__img img {
+    width: 100%;
+    height: 180px;
+    border-radius: 5px 5px 0 0;
+}
+
+.restaurant-list-card__content-tag {
+    display: flex;
+    justify-content: left;
+    margin: 0 0 10px 20px;
+    font-size: 13px;
+    line-height: 0;
+}
+
+.restaurant-list-card__content-tag-item {
+    margin-right: 3px;
+}
+
+.restaurant-list-card__content-btn {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 20px 45px 20px;
+}
+
+.restaurant-edit__btn,
+.reservation-list__btn {
+    border-radius: 5px;
+    background-color: rgb(22, 70, 243);
+    text-decoration: none;
+    color: #fff;
+    /* font-size: 20px; */
+    padding: 2px 12px;
+    font-size: 14px;
+}
+
+.restaurant-list-card__wrap {
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: row;
+    margin: 0 5%;
+
+}

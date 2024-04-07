@@ -80,6 +80,15 @@
     padding: 5px 6px;
     border: 1px solid;
 }
+.restaurant__review-btn a{
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(22, 70, 243);
+    padding: 5px 6px;
+    border: 1px solid;
+}
 .reservation__qr-btn-submit{
     background-color: rgb(22, 70, 243);
     border: 1px solid;
