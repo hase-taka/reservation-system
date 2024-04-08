@@ -63,6 +63,7 @@
     border-radius: 5px;
     width: 65px;
     height: 30px;
+    cursor: pointer;
 }
 
 .register-form__error-message{
