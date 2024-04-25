@@ -20,6 +20,9 @@ class CreateReservationsTable extends Migration
             $table->date('date');
             $table->time('time');
             $table->integer('number');
+            $table->boolean('paid')->default(false)->nullable();
+            $table->string('course_name')->nullable();
+            $table->integer('course_price')->nullable();
             $table->timestamps();
         });
     }

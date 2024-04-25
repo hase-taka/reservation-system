@@ -11,6 +11,9 @@
     </div>
     <div class="home__transition-btn">
         <a class="home__transition-btn-submit" href="/login">戻る</a>
+        @if($course_price)
+        <a class="payment-btn-submit" href="{{ route('payment.create', ['price' => $course_price,'number' => $number,'user_id' => $user_id,'restaurant_id' => $restaurant_id]) }}">カード決済</a>
+        @endif
     </div>
 </div>
 @endsection

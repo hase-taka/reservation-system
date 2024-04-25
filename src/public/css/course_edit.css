@@ -1,0 +1,114 @@
+.restaurant-name{
+    text-align: center;
+}
+
+.old-course__table-title,
+.new-course__table-title,
+.course-addition__title{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.old-corse__table{
+    width: 30%;
+    border-radius: 5px;
+    background-color: rgb(63, 102, 242);
+    box-shadow: 3px 3px 5px rgb(119, 118, 118);
+    margin: 0 auto;
+    color: #fff;
+}
+
+.old-course__table-inner,
+.new-course__table-inner{
+    margin: 0 auto 0;
+}
+
+.old-course__head-course,
+.old-course__head-price{
+    width: 150px;
+}
+
+.course-name,.course-price{
+    text-align: center;
+}
+
+.old-course__row-head{
+    line-height: 10px;
+    border-bottom: 1px solid #fff;
+}
+.old-course__row{
+    line-height: 10px;
+}
+
+
+.new-course__form{
+    width: 25%;
+    border-radius: 5px;
+    background-color: rgb(63, 102, 242);
+    box-shadow: 3px 3px 5px rgb(119, 118, 118);
+    margin: 0 auto;
+    color: #fff;
+}
+
+.table-head{
+    width: 150px;
+}
+.table-row{
+    line-height: 50px;
+}
+
+.new-course__row-head{
+    line-height: 10px;
+}
+/* .new-course__row{
+    margin-bottom: 10px;
+} */
+/* .course-name,.course-price{
+    width: 100px;
+} */
+
+.course-edit__btn,
+.course-addition__btn-wrap{
+    padding-bottom: 10px;
+}
+.course-addition__btn{
+    margin: 15px auto ;
+    display: block;
+    color: #fff;
+    background-color: rgb(22, 70, 243);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+}
+.new-course__form-submit{
+    margin: 15px auto;
+    display: block;
+    color: #fff;
+    background-color: rgb(22, 70, 243);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 65px;
+    height: 30px;
+    cursor: pointer;
+}
+.restaurant-edit_transition{
+    margin: 15px auto;
+    display: block;
+    color: #fff;
+    background-color: rgb(22, 70, 243);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 2px 0 0 3px;
+}
+.course-edit__btn-sub{
+        display: flex;
+        justify-content: space-evenly;
+}

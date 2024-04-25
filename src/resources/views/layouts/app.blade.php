@@ -35,6 +35,12 @@
             <li><a href="/">Home</a></li>
             <li><form  action="{{ route('logout') }}" method="post">@csrf<button class="logout-btn" type="submit">Logout</button></form></li>
             <li><a href="/my_page">Mypage</a></li>
+            @if($user->role_id==1)
+            <li><a href="/users">Useradmin</a></li>
+            @endif
+            @if($user->role_id==2)
+            <li><a href="/store_in_charge">Storeincharge</a></li>
+            @endif
         </ul>
         @yield('header')
     </header>

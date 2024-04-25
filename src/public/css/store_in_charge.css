@@ -129,3 +129,52 @@
     margin: 0 5%;
 
 }
+
+
+
+.store-in-charge__title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 2% 0;
+}
+
+.store-charge__btn {
+    text-align: right;
+    margin: 0 7% 2% 0;
+}
+
+.store-charge__btn-submit {
+    display: inline-block;
+    background-color: rgb(22, 70, 243);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    height: 40px;
+    width: 80px;
+    padding: 9px 10px 0 0;
+    text-decoration: none;
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .restaurant-list-card {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgb(119, 118, 118);
+    margin: 0 3.2% 30px 3.2%;
+}
+
+    .store-charge__btn {
+        text-align: right;
+        margin: 0 8% 3% 0;
+    }
+
+    /* ここにタブレットやスマートフォン用のスタイルを記述します */
+}

@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ReservationStoreRequest;
 use App\Models\Restaurant;
 use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Favorite;
 use App\Models\Reservation;
+use App\Models\CourseMenu;
+use Carbon\Carbon;
 
 
 class ReservationController extends Controller
@@ -18,9 +21,21 @@ class ReservationController extends Controller
     $areas = Area::all();
     $genres = Genre::all();
 
-        return view('restaurant-list', compact('restaurants', 'areas', 'genres'));
+    $user = $request->user();
 
+    
+
+        return view('restaurant_list', compact('restaurants', 'areas', 'genres','user'));
+
+        // if ($user->role_id === 1) {
+        //     return view('restaurant_list_admin', compact('restaurants', 'areas', 'genres'));
+        // } elseif ($user->role_id === 2) {
+        //     return view('restaurant_list_representative', compact('restaurants', 'areas', 'genres'));
+        // } else {
+        //     return view('restaurant_list', compact('restaurants', 'areas', 'genres'));
+        // }
     }
+
 
     public function search(Request $request){
 
@@ -57,18 +72,22 @@ class ReservationController extends Controller
     $areas = Area::all();
     $genres = Genre::all();
 
-    return view('restaurant-list', compact('restaurants', 'areas', 'genres'));
+    $user = $request->user();
+
+        // if ($user->role_id === 1) {
+        //     return view('restaurant_list_admin', compact('restaurants', 'areas', 'genres'));
+        // } elseif ($user->role_id === 2) {
+        //     return view('restaurant_list_representative', compact('restaurants', 'areas', 'genres'));
+        // } else {
+        //     return view('restaurant_list', compact('restaurants', 'areas', 'genres'));
+        // }
+
+
+
+    return view('restaurant_list', compact('restaurants', 'areas', 'genres','user'));
     }
 
 
-    public function show($id)
-    {
-        // restaurantの詳細を取得
-        $restaurant = Restaurant::findOrFail($id);
-
-        // restaurantの詳細ページを表示
-        return view('restaurant-detail', compact('restaurant'));
-    }
 
     public function toggle(Request $request, Restaurant $restaurant)
     {
@@ -77,8 +96,8 @@ class ReservationController extends Controller
 
         // お気に入りが既に登録されているかチェック
         $existingFavorite = Favorite::where('user_id', $userId)
-                                     ->where('restaurant_id', $restaurant->id)
-                                     ->first();
+                                    ->where('restaurant_id', $restaurant->id)
+                                    ->first();
 
         if($existingFavorite) {
             // お気に入りがあれば削除
@@ -96,26 +115,69 @@ class ReservationController extends Controller
         return response()->json(['status' => $status]);
     }
 
-    public function store(Request $request){
-         
+
+
+    public function show(Request $request,$id)
+    {
+        // restaurantの詳細を取得
+        $restaurant = Restaurant::findOrFail($id);
+
+        // $user = auth()->id();
+        $user = $request->user();
+
+        $menus = CourseMenu::where('restaurant_id',$id)->get();
+        // restaurantの詳細ページを表示
+        // if ($user->role_id === 1) {
+        //     return view('restaurant_detail_admin', compact('restaurant'));
+        // } elseif ($user->role_id === 2) {
+        //     return view('restaurant_detail_representative', compact('restaurant'));
+        // } else {
+        //     return view('restaurant_detail', compact('restaurant'));
+        // }
+
+        return view('restaurant_detail', compact('restaurant','user','menus'));
+    }
+
+
+
+    public function store(ReservationStoreRequest $request){
         $user_id = auth()->id();
+        $user = $request->user();
+
+        $today = Carbon::now()->format('Y-m-d');
+        $now = Carbon::now()->format('H:i');
+        $inputDate = $request->date;
+        $inputTime = $request->time;
+        // dd($today);
+        if( $today == $inputDate && $now > $inputTime ){
+            return redirect()->back()->with('error','※只今の日時以降の入力を行なってください');
+        };
+        
+        $course_name = CourseMenu::where('restaurant_id',$request->restaurant_id)->where('price',$request->course_price)->value('name');
+        
+        $course_price = $request->course_price;
+        $number = $request->number;
 
         $reservation = Reservation::create([
             'user_id' => $user_id,
             'restaurant_id' => $request->restaurant_id,
             'date' => $request->date,
             'time' => date('H:i', strtotime($request->time)),
-            'number' => $request->partySize,
+            'number' => $request->number,
+            'course_name' => $course_name,
+            'course_price' => $request->course_price,
         ]);
-        // フォームから送信されたデータで予約を作成する
-    // $reservation = new Reservation();
-    // $reservation->user_id = auth()->id(); // ユーザーIDを設定
-    // $reservation->restaurant_id = $request->input('restaurant_id'); // レストランIDを設定
-    // $reservation->date = $request->input('date');
-    // $reservation->time = $request->input('time');
-    // $reservation->number = $request->input('number');
-    // $reservation->save();
-        return view('done');
+
+        $restaurant_id = $request->restaurant_id;
+        // if ($user->role_id === 1) {
+        //     return view('done_admin');
+        // } elseif ($user->role_id === 2) {
+        //     return view('done_representative');
+        // } else {
+        //     return view('done');
+        // }
+
+        return view('done',compact('user','course_price','number','restaurant_id','user_id'));
     }
 
 
@@ -139,27 +201,69 @@ class ReservationController extends Controller
     //     return response()->json(['message' => '予約が更新されました']);
     // }
 
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
         $reservation = Reservation::findOrFail($id);
-        return view('reservation_edit', compact('reservation'));
+        $user = $request->user();
+        $restaurant = Restaurant::where('id',$reservation->restaurant_id)->get();
+        // dd($restaurant->has_menu);
+        $menus = CourseMenu::where('restaurant_id',$reservation->restaurant_id)->get();
+
+        // if ($user->role_id === 1) {
+        //     return view('reservation_edit_admin', compact('reservation'));
+        // } elseif ($user->role_id === 2) {
+        //     return view('reservation_edit_representative', compact('reservation'));
+        // } else {
+        //     return view('reservation_edit', compact('reservation'));
+        // }
+
+
+        return view('reservation_edit', compact('reservation','user','restaurant','menus'));
     }
 
-    public function update(Request $request, $id)
+
+
+    public function update(ReservationStoreRequest $request, $id)
     {
         $reservation = Reservation::findOrFail($id);
         // バリデーションなどの適切な処理を行う
-        $validatedData = $request->validate([
-            'date' => 'required|date',
-            'time' => 'required',
-            'number' => 'required|integer|min:1',
-        ]);
+        // $validatedData = $request->validate([
+        //     'date' => 'required|date',
+        //     'time' => 'required',
+        //     'number' => 'required|integer|min:1',
+        // ]);
+        $today = Carbon::now()->format('Y-m-d');
+        $now = Carbon::now()->format('H:i');
+        $inputDate = $request->date;
+        $inputTime = $request->time;
+        // dd($today);
+        if( $today == $inputDate && $now > $inputTime ){
+            return redirect()->back()->with('error','※只今の日時以降の入力を行なってください');
+        };
+// $model->update(['属性名' => '更新値', ...]);
+        $restaurant = Restaurant::where('id',$reservation->restaurant_id)->first();
+        $restaurantId = $restaurant->id;
+        $course_name = CourseMenu::where('restaurant_id',$restaurantId)->where('price',$request->course_price)->value('name');
 
         // 予約を更新する
-        $reservation->update($validatedData);
+        $reservation->update([
+            'date' => $request->date,
+            'time' => $request->time,
+            'number' => $request->number,
+            'course_name' => $course_name,
+            'course_price' => $request->course_price,
+        ]);
 
         // 更新後に適切な処理を行う（リダイレクトなど）
-        return redirect()->route('mypage')->with('success', '予約が更新されました');
+        // return redirect()->route('my_page')->with('success', '予約が更新されました');
+
+        $course_price = $request->course_price;
+        $number = $request->number;
+        $restaurant_id = $restaurantId;
+        $user_id = auth()->id();
+        $user = $request->user();
+
+        return view('done',compact('user','course_price','number','restaurant_id','user_id'));
     }
 
     public function destroy($id)

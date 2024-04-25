@@ -1,7 +1,7 @@
 @extends('layouts.app_representative')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/restaurant-list.css') }}">
+<link rel="stylesheet" href="{{ asset('css/store_in_charge.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -44,30 +44,7 @@
     });
 </script>
 <style>
-.store-in-charge__title {
-    text-align:center;
-    font-size:24px;
-    font-weight:bold;
-    margin:0 0 2% 0;
-}
-.store-charge__btn{
-    text-align:right;
-    margin:0 7% 2% 0;
-}
-.store-charge__btn-submit{
-    display: inline-block;
-    background-color: rgb(22, 70, 243);
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 14px;
-    cursor: pointer;
-    height: 40px;
-    width: 80px;
-    padding: 9px 10px 0 0;
-    text-decoration: none;
 
-}
 
 </style>
 @endsection
@@ -105,6 +82,7 @@
 <div class="store-charge__btn">
     <a  class="store-charge__btn-submit" href="/restaurant/addition" method="get">店舗追加</a>
 </div>
+
 <div class="restaurant-list-card__wrap">
 @foreach($restaurants as $restaurant)
     <div class="restaurant-list-card">
@@ -129,9 +107,9 @@
             <p class="restaurant-list-card__content-tag-item">#{{ $restaurant->genre->genre_name }}</p>
         </div>
         <div class="restaurant-list-card__content-btn">
-            <a class="restaurant-detail__btn" href="{{ route('restaurant-detail', ['id' => $restaurant->id]) }}">編集</a>
+            <a class="restaurant-edit__btn" href="{{ route('restaurant_edit', ['id' => $restaurant->id]) }}">編集</a>
             <!-- <i class="fa-solid fa-heart fa-xl favorite-btn" data-restaurant-id="{{ $restaurant->id }}" id="favoriteButton"></i> -->
-            <button class="favorite-btn" data-restaurant-id="{{ $restaurant->id }}" style="color:{{ $restaurant->isFavorite(auth()->id()) ? 'red' : 'rgb(216, 216, 216)' }}">予約一覧</button>
+            <a class="reservation-list__btn" href="{{ route('restaurant_reservation_list', ['id' => $restaurant->id]) }}">予約一覧</a>
         </div>
     </div>
 @endforeach

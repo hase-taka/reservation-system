@@ -15,6 +15,9 @@ class Reservation extends Model
         'date',
         'time',
         'number',
+        'course_name',
+        'course_price',
+        'paid',
     ];
 
     // userとrestaurantとのリレーション

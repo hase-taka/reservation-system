@@ -5,6 +5,7 @@
 .restaurant-edit__title-inner{
     margin:0 auto ;
     font-size: 29px;
+
 }
 
 .restaurant__detail-reservation {
@@ -146,7 +147,7 @@
 }
 
 .representative-name{
-    margin-left: 300px;
+    margin-left: 40%;
 }
 
 
@@ -156,6 +157,10 @@
     font-size: 29px;
 }
 
+
+.restaurant-edit__form{
+    width: 38%;
+}
 
 .restaurant-edit__form-inner{
     width: 100%;
@@ -182,6 +187,7 @@
     margin-left: 20px;
     display: inline-block;
     line-height: 30px;
+    color: #fff;
 }
 
 .table-data__content {
@@ -205,7 +211,10 @@
     width: 300px;
 }
 
-
+.restaurant-edit__form-button{
+    display: flex;
+    justify-content:center;
+}
 .restaurant-edit__form-button-submit {
     margin: 15px auto 0;
     display: block;
@@ -218,6 +227,175 @@
     cursor: pointer;
 }
 
+.restaurant-edit__form-course-button{
+    margin: 15px auto 0;
+    display: block;
+    color: #fff;
+    background-color: rgb(22, 70, 243);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 95px;
+    height: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    padding:2px 0 0 7px;
+ }
+
 .register-form__error-message {
     color: rgb(255, 43, 43);
+}
+
+
+/* .representative-name,
+.representative-name__inner {
+    width: 150px;
+} */
+.table-row{
+    width: 100%;
+}
+
+
+
+ @media screen and (min-width:921px) and (max-width: 1140px) {
+
+.representative-name {
+        margin-left: 30%;
+    }
+
+.table-row {
+    width: 100%;
+    display: inline-block;
+}
+}
+
+@media screen and (min-width:769px) and (max-width: 920px) {
+
+    .restaurant-detail {
+            display: flex;
+            width: 100%;
+        }
+    
+        .restaurant-edit__form-inner {
+            width: 80%;
+            display: block;
+            margin: 15px auto 15px;
+            border-radius: 5px;
+            background-color: rgb(63, 102, 242);
+            box-shadow: 3px 3px 5px rgb(119, 118, 118);
+            padding: 30px;
+        }
+    
+        .representative-name {
+            margin-left: 4%;
+        }
+    
+        .restaurant__detail-reservation {
+            display: block;
+            
+        }
+    
+        .area-genre-content_wrap {
+            width: 80%;
+            margin-right: 40px;
+        }
+    
+        .detail-left {
+            width: 75%;
+        }
+    
+        .restaurant__tag {
+            display: flex;
+            margin-left: 15px;
+        }
+    
+        .representative-name,
+        .representative-name__inner {
+            font-size: 14px;
+        }
+    
+        .restaurant-edit__title-inner {
+            text-align: center;
+            margin: 20px auto 0px;
+            font-size: 29px;
+        }
+    
+        .restaurant-edit__form {
+            width: 100%;
+        }
+
+        .restaurant-content {
+            width: 430px;
+        }
+
+        .restaurant-image,
+        .restaurant-genre,
+        .restaurant-area,
+        .restaurant-name,
+        .representative_id{
+            width: 430px;
+            height: 30px;
+        }
+}
+
+@media screen and (max-width: 768px) {
+
+    .restaurant-detail {
+        display: flex;
+        width: 100%;
+    }
+
+    .restaurant-edit__form-inner {
+        width: 80%;
+        display: block;
+        margin: 15px auto 15px;
+        border-radius: 5px;
+        background-color: rgb(63, 102, 242);
+        box-shadow: 3px 3px 5px rgb(119, 118, 118);
+        padding: 30px;
+    }
+
+    .representative-name {
+        margin-left: 4%;
+    }
+
+    .restaurant__detail-reservation {
+        display: block;
+       
+    }
+
+    .area-genre-content_wrap {
+        width: 80%;
+        margin-right: 40px;
+    }
+
+    .detail-left {
+        width: 75%;
+    }
+
+    .restaurant__tag {
+        display: flex;
+        margin-left: 15px;
+    }
+
+    .representative-name,
+    .representative-name__inner {
+        font-size: 14px;
+    }
+
+    .restaurant-edit__title-inner {
+        text-align: center;
+        margin: 20px auto 0px;
+        font-size: 29px;
+    }
+
+    .restaurant-edit__form {
+        width: 100%;
+    }
+
+    .table-row {
+        width: 100%;
+        
+    }
+
+    
 }

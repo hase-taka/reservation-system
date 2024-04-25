@@ -19,7 +19,13 @@ class CreateRestaurantsTable extends Migration
             $table->foreignId('area_id')->constrained()->onDelete('cascade');
             $table->foreignId('genre_id')->constrained()->onDelete('cascade');
             $table->string('content');
-            $table->string('img_url');
+            $table->string('img_url')->nullable();
+            $table->string('file_name')->nullable();
+            $table->string('file_path')->nullable();
+            // $table->foreignId('representative_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('representative_id')->nullable();
+            $table->foreign('representative_id')->references('id')->on('users')->onDelete('set null');
+            $table->boolean('has_menu')->default(false)->nullable();
             $table->timestamps();
         });
     }

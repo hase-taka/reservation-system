@@ -15,6 +15,8 @@ class Restaurant extends Model
         'area_id',
         'genre_id',
         'content',
+        'representative_id',
+        'has_menu',
     ];
 
     // reservations/favorites/areas/genresとのリレーション
@@ -46,5 +48,15 @@ class Restaurant extends Model
     public function isFavorite($userId)
     {
         return $this->favorites()->where('user_id', $userId)->exists();
+    }
+
+    public function representative()
+    {
+        return $this->belongsTo(User::class, 'representative_id');
+    }
+
+    public function courses()
+    {
+        return $this->hasMany(CourseMenu::class);
     }
 }

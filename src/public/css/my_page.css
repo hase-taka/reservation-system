@@ -98,7 +98,14 @@
     font: inherit;
 }
 
-
+.reservation__modification-paid{
+    color: #fff;
+    width: 180px;
+}
+.paid-message{
+    margin: 0;
+    line-height: 17px;
+}
 
 
 
@@ -214,4 +221,19 @@
     border: 1px solid #888;
     width: 80%;
     /* コンテンツの幅 */
+}
+
+
+
+@media screen and (min-width:921px) and (max-width: 1140px) {
+
+}
+
+@media screen and (min-width:769px) and (max-width: 920px) {
+
+}
+
+@media screen and (max-width: 768px) {
+
+
 }

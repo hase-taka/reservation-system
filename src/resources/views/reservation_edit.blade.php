@@ -33,11 +33,17 @@
                     <td class="reservation-table__head">Number</td>
                     <td class="reservation-table__data">{{ $reservation->number }}</td>
                 </tr>
+                @if(!empty($reservation->course_name))
+                <tr class="reservation-table__row">
+                    <td class="reservation-table__head">Course</td>
+                    <td class="reservation-table__data">{{ $reservation->course_name }}</td>
+                </tr>
+                @endif
             </table>
         </div>
     </div>
     <div class="arrow-img">
-        <img src="/img/arrow.png" alt="arrow-icon" width="50px" height="50px">
+        <img src="/images/arrow.png" alt="arrow-icon" width="50px" height="50px">
     </div>
     <div class="reservation__edit-form">
         
@@ -96,6 +102,19 @@
                             </td>
                         </tr>
                     </div>
+                    @endif
+                    @if($reservation->course_name)
+                    <tr class="edit-form__row">
+                        <td class="edit-form__head">Course</td>
+                        <td class="edit-form__data">
+                            <select class="edit-form__item-input" name="course_price" id="courseSelect"  >
+                                <option value="">コースを希望の場合は選択してください</option>
+                                @foreach( $menus as $menu )
+                                <option value="{{ $menu->price }} ">{{$menu->name}} {{$menu->price}}円</option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
                     @endif
                 </table>
             </div>

@@ -8,9 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+// use Laravel\Cashier\Billable;
+
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    // use Billable;
 
     /**
      * The attributes that are mass assignable.
@@ -19,6 +23,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'name',
+        // 'nickname',
         'email',
         'password',
         'role_id'
@@ -62,6 +67,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function restaurants()
+    {
+        return $this->hasMany(Restaurant::class, 'representative_id');
     }
 //     public function roles()
 //     {

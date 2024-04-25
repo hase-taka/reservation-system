@@ -11,13 +11,20 @@
         <div class="restaurant-detail__header">
             <div class="return-page__btn">
                 <a class="return-page__btn-submit" href="/"><</a>
+                <!-- url()->previous() -->
             </div>
             <div class="restaurant-detail-name">
                 <h2 class="restaurant-detail-name__inner">{{ $restaurant->name }}</h2>
             </div>
         </div>
         <div class="restaurant-detail-img">
-            <img src="{{ $restaurant->img_url}}" alt="店舗画像">
+            @if($restaurant->img_url)
+                <img src="{{ $restaurant->img_url }}" alt="店舗画像">
+            @elseif($restaurant->file_path)
+                <img src="{{ asset($restaurant->file_path) }}" alt="Restaurant Image">
+            @else
+                <img src="images/no_image.jpeg" alt="No Image">
+            @endif
         </div>
         <div class="restaurant__tag">
             <p class="restaurant-tag-item">#{{ $restaurant->area->area_name }}</p>
@@ -52,7 +59,14 @@
                         </td>
                     </tr>
                 </div>
-                @endif   
+                @endif
+                <div class="error-message">
+                    <tr>
+                        <td  colspan="2">
+                        {{session('error')}}
+                        </td>
+                    </tr>
+                </div>
                 <input class="reservation-form__item-input"  type="number" id="partySizeInput" name ="number" min="1" placeholder="人数" oninput="displayInput()">
                 @if ($errors->has('number'))
                 <div class="error-message">
@@ -63,6 +77,14 @@
                     </tr>
                 </div>
                 @endif   
+                @if($restaurant->has_menu == 1)
+                <select class="reservation-form__item-select" name="course_price" id="courseSelect" oninput="displayInput()" >
+                    <option value="">コースを希望の場合は選択してください</option>
+                    @foreach( $menus as $menu )
+                    <option value="{{ $menu->price }} ">{{$menu->name}} {{$menu->price}}円</option>
+                    @endforeach
+                </select>
+                @endif
             </div>
             <div class="reservation-confirm">
                 <div class="reservation-confirm__inner" id="displayArea"></div>
@@ -71,6 +93,8 @@
             <button class="reservation-btn__submit" type="submit">予約する</button>
         </div>
         </form>
+
+
             <script>
         // ページ読み込み時に確認情報を表示する関数
         $(document).ready(function() {
@@ -78,6 +102,7 @@
             var date = $('#dateInput').val();
             var time = $('#timeInput').val();
             var partySize = $('#partySizeInput').val();
+            var courseSelect = $('#courseSelect').val();
 
             // 取得した初期情報を表示する
             var 
@@ -85,6 +110,7 @@
             confirmationHTML += '<div class="confirm-container"><p class="confirm-h">Date</p><p class="confirm-d">'    + date + '</p></div>';
             confirmationHTML += '<div class="confirm-container"><p class="confirm-h">Time</p><p class="confirm-d">'    + time + '</p></div>';
             confirmationHTML += '<div class="confirm-container"><p class="confirm-h">Number</p><p class="confirm-d-n">'  + partySize + '</p></div>';
+            // confirmationHTML += '<div class="confirm-container"><p class="confirm-h">Course</p><p class="confirm-d-n">'  + courseSelect + '</p></div>';
 
             $('#displayArea').html(confirmationHTML);
         });
@@ -95,18 +121,22 @@
                 var dateValue = $('#dateInput').val();
                 var timeValue = $('#timeInput').val();
                 var partySizeValue = $('#partySizeInput').val();
+                var courseSelectValue = $('#courseSelect option:selected').text();
 
                 var displayText = '<div class="confirm-container"><p class="confirm-h">Shop</p>   <p class="confirm-d"> {{ $restaurant->name }}</p></div>';
                 displayText += '<div class="confirm-container"><p class="confirm-h">Date</p><p class="confirm-d">'    + dateValue + '</p></div>';
                 displayText += '<div class="confirm-container"><p class="confirm-h">Time</p><p class="confirm-d">'    + timeValue + '</p></div>';
                 displayText += '<div class="confirm-container"><p class="confirm-h">Number</p><p class="confirm-d-n">'  + partySizeValue + '</p></div>';
+                @if($restaurant->has_menu == 1)
+                displayText += '<div class="confirm-container"><p class="confirm-h">Course</p><p class="confirm-d-n">'  + courseSelectValue + '</p></div>';
+                @endif
 
                 $('#displayArea').html(displayText);
             }
 
             // 各入力フィールドの input イベントで displayInput 関数を呼び出す
             $(document).ready(function(){
-                $('#dateInput, #timeInput, #partySizeInput').on('input', displayInput);
+                $('#dateInput, #timeInput, #partySizeInput, #courseSelect').on('input', displayInput);
             });
         </script>
     </div>

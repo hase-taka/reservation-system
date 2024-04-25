@@ -87,6 +87,15 @@
     border: none;
     line-height: 23px;
 }
+.reservation-form__item-select{
+    display:block;
+    margin: 2% 0 0 3%;
+    width: 85%;
+    border-radius: 5px;
+    border: none;
+    line-height: 23px;
+    padding: 4px 0;
+}
 .error-message{
     margin:1% 0 0 3%;
     color: #fff;
@@ -130,4 +139,33 @@
    
     
     /* 左方向に20px移動 */
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .reservation-form {
+    width: 45%;
+    height: 620px;
+    border-radius: 5px;
+    background-color: rgb(63, 102, 242);
+    position: relative;
+    top: -80px;
+    box-shadow: 3px 3px 5px rgb(119, 118, 118);
+}
+
+    .reservation-btn__submit {
+        position: absolute;
+        width: 100%;
+        background-color: rgb(22, 70, 243);
+        border-radius: 0 0 5px 5px;
+        border: none;
+        color: #fff;
+        line-height: 40px;
+        margin-top: 83.7%;
+        cursor: pointer;
+        top: 50%;
+    }
+    /* ここにタブレットやスマートフォン用のスタイルを記述します */
 }

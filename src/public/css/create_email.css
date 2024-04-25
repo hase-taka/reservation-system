@@ -1,0 +1,56 @@
+.mail-edit__form{
+    width: 100%;
+}
+
+.mail-edit__form-title{
+    text-align: center;
+}
+.mail-edit__form-inner{
+    width: 30%;
+    height: 360px;
+    border-radius: 5px;
+    background-color: rgb(63, 102, 242);
+    box-shadow: 3px 3px 5px rgb(119, 118, 118);
+    margin: 0 auto;
+    color:#fff;
+    
+}
+
+.edit-form__item-subject{
+    padding:20px 0 0 15px;
+}
+
+.edit-form__item-content{
+    padding: 20px 0 0 15px;
+}
+
+.content-label{
+    vertical-align: top;
+}
+
+.edit-form__button{
+    margin: 15px auto 0;
+        display: block;
+        color: #fff;
+        background-color: rgb(22, 70, 243);
+        border: 1px solid #fff;
+        border-radius: 5px;
+        width: 65px;
+        height: 30px;
+        cursor: pointer;
+}
+
+.subject-input{
+    width: 80%;
+    height: 30px;
+}
+
+.content-input{
+    width: 80%;
+}
+
+.alert-success{
+    color:#fff;
+    text-align: center;
+    margin: 5px;
+}

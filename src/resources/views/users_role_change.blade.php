@@ -180,6 +180,9 @@ $(document).ready(function() {
 <div class="role-change__head">
     <h2 class="role-change__title">利用者一覧・管理</h2>
 </div>
+<div class="mail-create__btn">
+    <a class="mail-create__btn-submit" href="/create_email">メール作成</a>
+</div>
 <div class="user-role__table">
     <table class="user-role__table-inner">
         <div class="user-role__table-item">
@@ -200,6 +203,9 @@ $(document).ready(function() {
         </div>
     </table>
 </div>
+<div class="pagination">
+        {{ $users->links('pagination::default') }}
+    </div>
 
 
 <!-- モーダルウィンドウ -->

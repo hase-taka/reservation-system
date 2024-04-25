@@ -18,7 +18,8 @@
                 <tr class="table-row">
                     <th class="table-head">店舗代表者名</th>
                     <td class="table-data">
-                        <select class="representative_id" name="representative_id">
+                        <select class="representative_id" name="representative">
+                            <option value="">選択してください</option>
                             @foreach($users as $user)
                             <!-- @if($user->role_id == 2) -->
                                 <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -30,7 +31,7 @@
                 <tr>
                     <td colspan="2">
                         <p class="register-form__error-message">
-                            @error('reservation_id')
+                            @error('representative')
                             {{ $message }}
                             @enderror
                         </p>
@@ -109,7 +110,7 @@
                     </td>
                 </tr>
                 <tr class="table-row">
-                    <th class="table-head">画像・画像URL</th>
+                    <th class="table-head">店舗画像</th>
                     <td class="table-data">
                         <input class="restaurant-image" type="file" name="image" placeholder="画像をアップロード">
                     </td>
@@ -121,6 +122,13 @@
                             {{ $message }}
                             @enderror
                         </p>
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <th class="table-head">コース設定</th>
+                    <td class="table-data">
+                        <input class="restaurant-course" type="radio" name="has_menu" value="0" checked >無し
+                        <input class="restaurant-course" type="radio" name="has_menu" value="1" >有り
                     </td>
                 </tr>
             </table>

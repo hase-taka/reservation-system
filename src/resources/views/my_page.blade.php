@@ -135,6 +135,18 @@ $(document).ready(function() {
                             <th class="reservation-table__head">Number</th>
                             <td class="reservation-table__data">{{ $reservation->number }}</td>
                         </tr>
+                        @if($reservation->course_name)
+                        <tr class="reservation-table__row">
+                            <td class="reservation-table__head">Course</td>
+                            <td class="reservation-table__data">{{ $reservation->course_name }}</td>
+                        </tr>
+                        @endif
+                        @if($reservation->paid == 1)
+                        <tr class="reservation-table__row">
+                            <td class="reservation-table__head">Paid</td>
+                            <td class="reservation-table__data">カード決済済み</td>
+                        </tr>
+                        @endif
                     </table>
                 </div>
                 <div class="reservation__some-btn">
@@ -143,11 +155,25 @@ $(document).ready(function() {
                             <button class="reservation__qr-btn-submit" type="submit">QRコードを作成</button>
                         </form>
                     </div>
-                    <div class="reservation__modification-btn">
-                        <a href="{{ route('reservation.edit', $reservation->id) }}">予約変更</a>
-                        <!-- <button class="btn btn-primary edit-reservation" data-toggle="modal" data-target="#reservationModal" data-reservation-id="{{ $reservation->id }}">予約変更</button> -->
-                        <!-- <button class="reservation__modification-btn__submit">予約変更</button> -->
+                    @php
+                        $reservationDateTime = $reservation->date . ' ' . $reservation->time;
+                    @endphp
+                    @if($now > $reservationDateTime)
+                    <div class="restaurant__review-btn">
+                        <a href="{{ route('restaurant_review', $reservation->id) }}">レビュー</a>
                     </div>
+                    @endif
+                    @if($now < $reservationDateTime)
+                        @if($reservation->paid == 0)
+                        <div class="reservation__modification-btn">
+                            <a href="{{ route('reservation.edit', $reservation->id) }}">予約変更</a>
+                            <!-- <button class="btn btn-primary edit-reservation" data-toggle="modal" data-target="#reservationModal" data-reservation-id="{{ $reservation->id }}">予約変更</button> -->
+                            <!-- <button class="reservation__modification-btn__submit">予約変更</button> -->
+                        </div>
+                        @else
+                        <div class="reservation__modification-paid"><p class="paid-message">決済済みのためMypageからの予約変更不可</p></div>
+                        @endif
+                    @endif
                 </div>
             </div>
         @endforeach
@@ -164,7 +190,13 @@ $(document).ready(function() {
             @foreach($user->favorites as $favorite)
                 <div class="restaurant-list-card">
                     <div class="restaurant-list-card__img">
-                        <img src="{{ $favorite->restaurant->img_url}}" alt="店舗画像" >
+                        @if($favorite->restaurant->img_url)
+                            <img src="{{ $favorite->restaurant->img_url }}" alt="店舗画像">
+                        @elseif($favorite->restaurant->file_path)
+                            <img src="{{ asset($favorite->restaurant->file_path) }}" alt="Restaurant Image">
+                        @else
+                            <img src="images/no_image.jpeg" alt="No Image">
+                        @endif
                     </div>
                     <div class="restaurant-list-card__content">
                         <p class="restaurant-list-card__content-name">{{ $favorite->restaurant->name }}</p>

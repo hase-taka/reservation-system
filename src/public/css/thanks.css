@@ -16,6 +16,10 @@
     font-size: 20px;
 }
 
+.mail-send__message-inner{
+    margin:0 40px 0;
+}
+
 .login-form__transition-btn-submit{
     display: block;
     margin: 7% auto 15%;
@@ -34,4 +38,19 @@
 
 .login-form__transition-btn{
     padding-bottom: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .thanks-message__wrap {
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+        width: 60%;
+        margin: 50px auto;
+        box-shadow: 2px 2px 5px rgb(119, 118, 118);
+    }
+
+    /* ここにタブレットやスマートフォン用のスタイルを記述します */
 }

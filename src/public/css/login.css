@@ -46,3 +46,20 @@
 .login-form__btn {
     padding-bottom: 10px;
 }
+
+
+@media screen and (max-width: 768px) {
+
+    .login-form {
+            border: 0 0 0;
+            border-radius: 5px;
+            background-color: #fff;
+            width: 50%;
+            height: 20%;
+            /* text-align: center; */
+            margin: 50px auto;
+            box-shadow: 2px 2px 5px rgb(119, 118, 118);
+        }
+
+    /* ここにタブレットやスマートフォン用のスタイルを記述します */
+}

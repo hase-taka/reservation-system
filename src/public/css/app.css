@@ -157,3 +157,24 @@ body {
 body.active{
     background-color: #fff;
 }
+
+@media screen and (max-width: 768px) {
+
+    .hamburger {
+        width: 4.5%;
+        height: 5%;
+        position: relative;
+        position: fixed;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(58, 58, 247);
+        box-shadow: 2px 2px 5px rgb(119, 118, 118);
+        margin-left: 4.45%;
+    }
+
+    .header__app-name {
+        margin-left: 12%;
+    }
+
+    /* ここにタブレットやスマートフォン用のスタイルを記述します */
+}

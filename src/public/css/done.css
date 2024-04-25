@@ -18,7 +18,7 @@
 
 .home__transition-btn-submit{
     display: block;
-    margin: 7% auto 15%;
+    margin: 7% auto 5%;
     background-color: rgb(58, 58, 247);
     color: #fff;
     border: none;
@@ -32,6 +32,35 @@
     font-size: 14px;
 }
 
+.payment-btn-submit {
+    display: block;
+    margin: 7% auto 5%;
+    background-color: rgb(58, 58, 247);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 15px;
+    cursor: pointer;
+    width: 25%;
+    height: 35px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+}
+
 .home__transition-btn{
     padding-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .done-message__wrap {
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            width: 60%;
+            margin: 50px auto;
+            box-shadow: 2px 2px 5px rgb(119, 118, 118);
+        }
+    /* ここにタブレットやスマートフォン用のスタイルを記述します */
 }
