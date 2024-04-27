@@ -1,12 +1,4 @@
-/* .header{
-    display: flex;
-    justify-content: space-between;
-    margin: 0 5%;
-    align-self: center;
-} */
-.header{
-    
-}
+
 
 .search-form{
     width:44%;
@@ -24,9 +16,6 @@
     height:40px;
 }
 
-.search-form__area-name{
-    
-}
 
 .area-name__select,.genre-name__select,.restaurant-name__item{
     border: none;
@@ -66,7 +55,6 @@
     color: red;
     /* クリック時の色 */
 }
-
 
 
 .restaurant-list-card{

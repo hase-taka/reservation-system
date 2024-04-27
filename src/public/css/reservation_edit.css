@@ -14,7 +14,7 @@
 }
 
 .reservation-table{
-    margin:10% 0 0 5%;
+    margin:0 0 0 5%;
 }
 .reservation-table__row{
     line-height: 30px;
@@ -74,4 +74,82 @@
 
 .error-message{
     color: rgb(255, 43, 43);
+}
+
+.old-reservation__title,.new-reservation__title{
+        padding: 10px 10px 10px 5%;
+        margin: 0;
+    }
+
+.reservation__edit-table{
+    margin: 0 0 0 5%;
+}
+@media screen and (min-width:921px) and (max-width: 1140px) {}
+
+@media screen and (min-width:769px) and (max-width: 865px) {
+
+    .old-reservation {
+            width: 40%;
+            height: 210px;
+            border-radius: 5px;
+            background-color: rgb(63, 102, 242);
+            color: #fff;
+            margin: 5% auto;
+        }
+    
+        .reservation__edit-page {
+            margin-top: 3%;
+            display: block;
+            justify-content: center;
+        }
+    
+        .arrow-img img {
+            display: none;
+        }
+    
+        .reservation__edit-form {
+            width: 40%;
+            border-radius: 5px;
+            background-color: rgb(63, 102, 242);
+            color: #fff;
+            margin: 5% auto;
+        }
+    
+        .edit-form__btn {
+            padding-bottom: 5px;
+        }
+}
+
+@media screen and (max-width: 768px) {
+
+    .old-reservation {
+            width: 40%;
+            height: 210px;
+            border-radius: 5px;
+            background-color: rgb(63, 102, 242);
+            color: #fff;
+            margin: 5% auto;
+        }
+    
+    .reservation__edit-page {
+        margin-top: 3%;
+        display: block;
+        justify-content: center;
+    }
+
+    .arrow-img img {
+        display: none;
+    }
+
+    .reservation__edit-form {
+        width: 40%;
+        border-radius: 5px;
+        background-color: rgb(63, 102, 242);
+        color: #fff;
+        margin: 5% auto;
+    }
+
+    .edit-form__btn{
+        padding-bottom: 5px;
+    }
 }

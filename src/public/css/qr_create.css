@@ -1,0 +1,22 @@
+.return-page__btn-submit {
+
+    border-radius: 5px;
+    display: block;
+    margin: 0 18px 0 85px;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    padding: 0.2% 0 0 0.7%;
+    color: black;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px rgb(119, 118, 118);
+    cursor:pointer;
+}
+
+.qr-code__title{
+    text-align: center;
+}
+
+.qr-code{
+    text-align: center;
+}

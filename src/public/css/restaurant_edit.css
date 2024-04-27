@@ -241,7 +241,7 @@
     padding:2px 0 0 7px;
  }
 
-.register-form__error-message {
+.restaurant-edit-form__error-message {
     color: rgb(255, 43, 43);
 }
 
@@ -397,5 +397,8 @@
         
     }
 
-    
+    .restaurant-detail-name__inner {
+        margin-top: 4px;
+        font-size: 20px;
+    }
 }
