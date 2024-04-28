@@ -17,6 +17,8 @@
             <table class="addition-form__table-inner">
                 <tr class="table-row">
                     <th class="table-head">店名</th>
+                </tr>
+                <tr class="table-row">
                     <td class="table-data">
                         <p class="restaurant-name">{{ $reservation->restaurant->name }}</p>
                         <input type="hidden" name="restaurant_id" value="{{ $reservation->restaurant_id }}">
@@ -25,12 +27,14 @@
                 </tr>
                 <tr class="table-row">
                     <th class="table-head">名前orニックネーム</th>
+                </tr>
+                <tr class="table-row">
                     <td class="table-data">
                         <input  class="nickname" type="text" name="nickname" placeholder="名前またはニックネーム">
                         <!-- <input type="hidden" name="user_id" value="{{ $reservation->user_id }}"> -->
                     </td>
                 </tr>
-                <tr>
+                <tr class="table-row">
                     <td class="nickname-alert" colspan="2">
                         ※未入力の場合はユーザーネームでの投稿となります。
                     </td>
@@ -38,6 +42,8 @@
                 
                 <tr class="table-row">
                     <th class="table-head">評価</th>
+                </tr>
+                <tr class="table-row">
                     <td class="table-data rate-form">
                         <input id="star5" type="radio" name="rating" value="5">
                         <label for="star5">★</label>
@@ -51,7 +57,7 @@
                         <label for="star1">★</label>
                     </td>
                 </tr>
-                <tr>
+                <tr class="table-row">
                     <td colspan="2">
                         <p class="register-form__error-message">
                             @error('rating')
@@ -62,11 +68,13 @@
                 </tr>
                 <tr class="table-row">
                     <th class="table-head__content">コメント</th>
+                </tr>
+                <tr class="table-row">
                     <td class="table-data__content">
                         <textarea name="comment" class="restaurant-comment__inner"  id="" cols="30" rows="5" placeholder="接客・店内・料理などのコメントをお願いします"></textarea>
                     </td>
                 </tr>
-                <tr>
+                <tr class="table-row">
                     <td colspan="2">
                     @if ($errors->has('already_posted'))
                         <div class="register-form__error-message">{{ $errors->first('already_posted') }}</div>

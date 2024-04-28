@@ -104,6 +104,8 @@ $(document).ready(function() {
     <div class="my-page__inner-reservation">
         
         <p class="my-page__reservation-status">予約状況</p>
+        
+        <div class="reservation-status__wrap">
         @if ($user->reservations->count() > 0)
         @foreach($user->reservations as $index => $reservation)
             <div class="reservation-status__inner">
@@ -151,16 +153,17 @@ $(document).ready(function() {
                 </div>
                 <div class="reservation__some-btn">
                     <div class="reservation__qr-btn">
-                        <form action="" method="post">
+                        <a class="reservation__qr-btn-submit" href="{{ route('qr_create', ['reservation_id' => $reservation->id,'date' => $reservation->date,'time' => date('H:i', strtotime($reservation->time)),'restaurant_id' => $reservation->restaurant_id,'user_id' => $user->id,'number' => $reservation->number,'paid' => $reservation->paid,'course' => $reservation->course_name]) }}">QRコード作成</a>
+                        <!-- <form action="" method="post">
                             <button class="reservation__qr-btn-submit" type="submit">QRコードを作成</button>
-                        </form>
+                        </form> -->
                     </div>
                     @php
                         $reservationDateTime = $reservation->date . ' ' . $reservation->time;
                     @endphp
                     @if($now > $reservationDateTime)
                     <div class="restaurant__review-btn">
-                        <a href="{{ route('restaurant_review', $reservation->id) }}">レビュー</a>
+                        <a href="{{ route('restaurant_review',[ 'id' => $reservation->id]) }}">レビュー</a>
                     </div>
                     @endif
                     @if($now < $reservationDateTime)
@@ -180,6 +183,7 @@ $(document).ready(function() {
         @else
                 <p>現在、予約がありません。</p>
         @endif
+        </div>
     </div>
 
     <div class="my-page__inner-restaurant">

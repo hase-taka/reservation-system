@@ -100,9 +100,12 @@ $(document).ready(function() {
 <div class="my-page_head">
     <h2 class="my-page_user-name">{{$restaurant->name}}</h2>
 </div>
-
-        
-        <p class="my-page__reservation-status">予約一覧</p>
+        <div class="return-page__wrap">
+            <div class="return-page__btn">
+                <a class="return-page__btn-submit" href="/store_in_charge"><</a>
+            </div>
+            <p class="my-page__reservation-status">予約一覧</p>
+        </div>
         <div class="reservation-list">
         @if ($reservations->count() > 0)
         @foreach($reservations as $index => $reservation)

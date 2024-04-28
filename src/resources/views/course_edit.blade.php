@@ -25,7 +25,7 @@
             </tr>
             @endforeach
             @else
-                <tr><td><p>現在、予約がありません。</p></td></tr>
+                <tr><td><p>現在、コース設定はありません。</p></td></tr>
             @endif
         </table>
     </div>

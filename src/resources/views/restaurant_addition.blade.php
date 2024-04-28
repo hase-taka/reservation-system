@@ -18,7 +18,7 @@
                 <tr class="table-row">
                     <th class="table-head">店舗代表者名</th>
                     <td class="table-data">
-                        <select class="representative_id" name="representative">
+                        <select class="representative_id" name="representative" value="{{ old('representative') }}">
                             <option value="">選択してください</option>
                             @foreach($users as $user)
                             <!-- @if($user->role_id == 2) -->
@@ -40,7 +40,7 @@
                 <tr class="table-row">
                     <th class="table-head">店舗名</th>
                     <td class="table-data">
-                        <input class="restaurant-name" name="name" type="text" placeholder="店舗名">
+                        <input class="restaurant-name" name="name" type="text" placeholder="店舗名" value="{{ old('name') }}">
                     </td>
                 </tr>
                 <tr>
@@ -55,7 +55,7 @@
                 <tr class="table-row">
                     <th class="table-head">エリア</th>
                     <td class="table-data">
-                        <select class="restaurant-area" name="area" id="">
+                        <select class="restaurant-area" name="area" id="" value="{{ old('area') }}">
                             <option value="">選択してください</option>
                             <option value="1">東京都</option>
                             <option value="2">大阪府</option>
@@ -75,7 +75,7 @@
                 <tr class="table-row">
                     <th class="table-head">ジャンル</th>
                     <td class="table-data">
-                        <select class="restaurant-genre" name="genre" id="">
+                        <select class="restaurant-genre" name="genre" id="" value="{{ old('genre') }}">
                             <option value="">選択してください</option>
                             <option value="1">焼肉</option>
                             <option value="2">寿司</option>
@@ -97,7 +97,7 @@
                 <tr class="table-row">
                     <th class="table-head__content">説明</th>
                     <td class="table-data__content">
-                        <textarea name="content" class="restaurant-content"  id="" cols="30" rows="5" placeholder="説明をここに入力してください"></textarea>
+                        <textarea name="content" class="restaurant-content"  id="" cols="30" rows="5" placeholder="説明をここに入力してください" value="{{ old('content') }}"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -117,12 +117,18 @@
                 </tr>
                 <tr>
                     <td colspan="2">
+                        @if(session('error'))
+                            <div class="register-form__error-message">
+                                {{ session('error') }}
+                            </div>
+                        @endif
                         <p class="register-form__error-message">
-                            @error('restaurant-image')
+                            @error('image')
                             {{ $message }}
                             @enderror
                         </p>
                     </td>
+                    
                 </tr>
                 <tr class="table-row">
                     <th class="table-head">コース設定</th>

@@ -1,7 +1,7 @@
 @extends('layouts.app_representative')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/course_edit.css') }}">
+<link rel="stylesheet" href="{{ asset('css/course_addition.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
 
@@ -10,23 +10,12 @@
     <h2>{{ $restaurant->name}}</h2>
 </div>
 <div class="course-edit__wrap">
-    
     <div class="course-addition__title"><p>コース設定</p></div>
     <div class="new-course__form">
-        
         <form action="{{ route('course_store') }}" method=post>
         @csrf
-            
             <div class="new-course__table">
                 <table class="new-course__table-inner">
-                    <!-- <tr class="table-row">
-                        <th class="table-head">コース設定</th>
-                        <td class="table-data">
-                            <input class="restaurant-course" type="radio" name="has_menu" value="0" checked >無し
-                            <input class="restaurant-course" type="radio" name="has_menu" value="1" >有り
-                        </td>
-                    </tr> -->
-                    
                     <tr class="new-course__row">
                         <th><p>コース名</p></th>
                         <th><p>金額</p></th>
@@ -49,15 +38,6 @@
         </form>
     </div>
 </div>
-
-<!-- <div id="course_fields">
-        <div class="course_field">
-            <label for="course_name">コース名</label>
-            <input type="text" name="course_name[]" class="course_name">
-            <label for="course_price">価格</label>
-            <input type="text" name="course_price[]" class="course_price">
-        </div>
-    </div> -->
 
 <script>
     document.getElementById('add_course').addEventListener('click', function() {

@@ -11,7 +11,7 @@
     <div class="restaurant-detail">
         <div class="detail-left">
             <div class="restaurant-detail__header">
-                <div class="de"></div>
+                
                 <div class="return-page__btn">
                     <a class="return-page__btn-submit" href="/store_in_charge"><</a>
                 </div>
@@ -63,7 +63,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <p class="register-form__error-message">
+                            <p class="restaurant-edit-form__error-message">
                                 @error('name')
                                 {{ $message }}
                                 @enderror
@@ -85,7 +85,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <p class="register-form__error-message">
+                            <p class="restaurant-edit-form__error-message">
                                 @error('representative')
                                 {{ $message }}
                                 @enderror
@@ -106,7 +106,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <p class="register-form__error-message">
+                            <p class="restaurant-edit-form__error-message">
                                 @error('area')
                                 {{ $message }}
                                 @enderror
@@ -128,7 +128,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <p class="register-form__error-message">
+                            <p class="restaurant-edit-form__error-message">
                                 @error('genre')
                                 {{ $message }}
                                 @enderror
@@ -143,7 +143,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <p class="register-form__error-message">
+                            <p class="restaurant-edit-form__error-message">
                                 @error('content')
                                 {{ $message }}
                                 @enderror
@@ -158,8 +158,8 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <p class="register-form__error-message">
-                                @error('restaurant-image')
+                            <p class="restaurant-edit-form__error-message">
+                                @error('image')
                                 {{ $message }}
                                 @enderror
                             </p>

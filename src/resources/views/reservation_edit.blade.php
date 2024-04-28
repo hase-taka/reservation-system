@@ -15,6 +15,7 @@
 
 <div class="reservation__edit-page">
     <div class="old-reservation">
+        <p class="old-reservation__title">現在の予約状況</p>
         <div class="reservation-table">
             <table class="reservation-table__inner">
                 <tr class="reservation-table__row">
@@ -45,11 +46,13 @@
     <div class="arrow-img">
         <img src="/images/arrow.png" alt="arrow-icon" width="50px" height="50px">
     </div>
+    
     <div class="reservation__edit-form">
         
         <form class="reservation__edit-form__inner" action="{{ route('reservation.update', $reservation->id) }}" method="post">
         @csrf
         @method('PUT')
+            <p class="new-reservation__title">予約の変更内容</p>
             <input type="hidden" name="restaurant_id" value="{{ $reservation->restaurant->id }}">
             <div class="reservation__edit-table">
                 <table class="reservation__edit-table--inner">
