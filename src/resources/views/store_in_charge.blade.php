@@ -108,7 +108,6 @@
         </div>
         <div class="restaurant-list-card__content-btn">
             <a class="restaurant-edit__btn" href="{{ route('restaurant_edit', ['id' => $restaurant->id]) }}">編集</a>
-            <!-- <i class="fa-solid fa-heart fa-xl favorite-btn" data-restaurant-id="{{ $restaurant->id }}" id="favoriteButton"></i> -->
             <a class="reservation-list__btn" href="{{ route('restaurant_reservation_list', ['id' => $restaurant->id]) }}">予約一覧</a>
         </div>
     </div>
