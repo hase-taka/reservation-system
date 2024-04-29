@@ -2,9 +2,9 @@
 
 ## 概要説明
 
-<img width="1424" alt="スクリーンショット 2024-04-29 23 47 41" src="https://github.com/hase-taka/attendance-system/assets/148784913/5dfda12a-88a8-4f12-83f7-ea1191628bcb">
+<img width="800" alt="スクリーンショット 2024-04-29 23 47 41" src="https://github.com/hase-taka/attendance-system/assets/148784913/5dfda12a-88a8-4f12-83f7-ea1191628bcb">
 
-<img width="1419" alt="スクリーンショット 2024-04-29 23 47 07" src="https://github.com/hase-taka/attendance-system/assets/148784913/bbaa608b-9837-4105-b757-300b42098333">
+<img width="800" alt="スクリーンショット 2024-04-29 23 47 07" src="https://github.com/hase-taka/attendance-system/assets/148784913/bbaa608b-9837-4105-b757-300b42098333">
 
 飲食店の予約サービスを作成いたしました。
 
@@ -54,11 +54,11 @@
 
 ## テーブル設計
 
-<img width="600" alt="スクリーンショット 2024-04-29 23 00 53" src="https://github.com/hase-taka/attendance-system/assets/148784913/6afe7b5d-ff2c-4524-929d-996d8e2d9d86">
+<img width="800" alt="スクリーンショット 2024-04-29 23 00 53" src="https://github.com/hase-taka/attendance-system/assets/148784913/6afe7b5d-ff2c-4524-929d-996d8e2d9d86">
 
 ## ER 図
 
-<img width="600" alt="スクリーンショット 2024-04-27 1 28 39" src="https://github.com/hase-taka/attendance-system/assets/148784913/a7cad675-862c-4a5c-b1f8-5d7a48b99422">
+<img width="800" alt="スクリーンショット 2024-04-27 1 28 39" src="https://github.com/hase-taka/attendance-system/assets/148784913/a7cad675-862c-4a5c-b1f8-5d7a48b99422">
 
 ## 環境構築
 
