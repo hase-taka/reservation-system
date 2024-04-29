@@ -70,6 +70,11 @@ class UserController extends Controller
         // return view('users_role_change', compact('users'));
     }
 
+    public function role_change(Request $request){
+        $user_id = $request->input('id');
+
+        return view('role_change',compact('user_id'));
+    }
 
 
     public function update_role(Request $request, $id)

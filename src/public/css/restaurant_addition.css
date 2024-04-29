@@ -69,3 +69,93 @@
 .register-form__error-message{
     color: rgb(255, 43, 43);
 }
+
+
+ @media screen and (min-width:880px) and (max-width: 1139px) {
+
+    .restaurant-addition__form-inner {
+            width: 50%;
+            display: block;
+            margin: 15px auto 15px;
+            border-radius: 5px;
+            background-color: rgb(63, 102, 242);
+            box-shadow: 3px 3px 5px rgb(119, 118, 118);
+            padding: 30px;
+        }
+ }
+
+ @media screen and (min-width:665px) and (max-width: 879px) {
+
+    .restaurant-addition__form-inner {
+            width: 65%;
+            display: block;
+            margin: 15px auto 15px;
+            border-radius: 5px;
+            background-color: rgb(63, 102, 242);
+            box-shadow: 3px 3px 5px rgb(119, 118, 118);
+            padding: 30px;
+        }
+ }
+ @media screen and (min-width:530px) and (max-width: 664px) {
+
+    .restaurant-addition__form-inner {
+            width: 85%;
+            display: block;
+            margin: 15px auto 15px;
+            border-radius: 5px;
+            background-color: rgb(63, 102, 242);
+            box-shadow: 3px 3px 5px rgb(119, 118, 118);
+            padding: 30px;
+        }
+ }
+ @media screen and (min-width:400px) and (max-width: 529px) {
+
+    .restaurant-addition__form-inner {
+            width: 85%;
+            display: block;
+            margin: 15px auto 15px;
+            border-radius: 5px;
+            background-color: rgb(63, 102, 242);
+            box-shadow: 3px 3px 5px rgb(119, 118, 118);
+            padding: 30px;
+        }
+
+        .restaurant-image,
+        .restaurant-genre,
+        .restaurant-area,
+        .restaurant-name,
+        .representative_id {
+            width: 220px;
+            height: 30px;
+        }
+
+        .restaurant-content {
+            width: 220px;
+        }
+ }
+
+ @media screen and (max-width: 399px) {
+
+    .restaurant-image,
+    .restaurant-genre,
+    .restaurant-area,
+    .restaurant-name,
+    .representative_id {
+        width: 160px;
+        height: 30px;
+    }
+    
+    .restaurant-content {
+        width: 160px;
+    }
+
+    .restaurant-addition__form-inner {
+        width: 85%;
+        display: block;
+        margin: 15px auto 15px;
+        border-radius: 5px;
+        background-color: rgb(63, 102, 242);
+        box-shadow: 3px 3px 5px rgb(119, 118, 118);
+        padding: 30px;
+    }
+ }

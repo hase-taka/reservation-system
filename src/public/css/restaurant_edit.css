@@ -246,17 +246,13 @@
 }
 
 
-/* .representative-name,
-.representative-name__inner {
-    width: 150px;
-} */
 .table-row{
     width: 100%;
 }
 
 
 
- @media screen and (min-width:921px) and (max-width: 1140px) {
+@media screen and (min-width:921px) and (max-width: 1140px) {
 
 .representative-name {
         margin-left: 30%;
@@ -337,7 +333,7 @@
         }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width:579px)and (max-width: 768px) {
 
     .restaurant-detail {
         display: flex;
@@ -401,4 +397,75 @@
         margin-top: 4px;
         font-size: 20px;
     }
+}
+
+
+@media screen and (max-width: 578px) {
+
+    .restaurant-detail {
+            display: block;
+            width: 100%;
+            margin: 0 15%;
+            
+        }
+
+       
+    
+        .restaurant-edit__form-inner {
+            width: 80%;
+            display: block;
+            margin: 15px auto 15px;
+            border-radius: 5px;
+            background-color: rgb(63, 102, 242);
+            box-shadow: 3px 3px 5px rgb(119, 118, 118);
+            padding: 30px;
+        }
+    
+        .representative-name {
+            margin-left: 4%;
+        }
+    
+        .restaurant__detail-reservation {
+            display: block;
+    
+        }
+    
+        .area-genre-content_wrap {
+            width: 80%;
+            margin-right: 40px;
+        }
+    
+        .detail-left {
+            width: 75%;
+        }
+    
+        .restaurant__tag {
+            display: flex;
+            margin-left: 15px;
+        }
+    
+        .representative-name,
+        .representative-name__inner {
+            font-size: 14px;
+        }
+    
+        .restaurant-edit__title-inner {
+            text-align: center;
+            margin: 20px auto 0px;
+            font-size: 29px;
+        }
+    
+        .restaurant-edit__form {
+            width: 100%;
+        }
+    
+        .table-row {
+            width: 100%;
+    
+        }
+    
+        .restaurant-detail-name__inner {
+            margin-top: 4px;
+            font-size: 20px;
+        }
 }

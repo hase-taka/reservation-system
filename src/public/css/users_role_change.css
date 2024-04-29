@@ -68,17 +68,6 @@
     font-size: 16px;
 }
 
-.active span {
-    margin: 0 1px;
-    color: white;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    background-color: rgb(53, 53, 250);
-    font-size: 16px;
-}
-
 .pagination a {
     margin: 0 1px;
     color: blue;
@@ -111,3 +100,255 @@
     padding: 10px 0px 0 5px;
     margin: 0px 20% -40px auto;
 }
+
+/* モーダルのスタイル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    border-radius: 5px;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+.role-change__form {
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-title,.user-name {
+    text-align: center;
+}
+
+.now-role,
+.new-role {
+    width: 25%;
+    border-radius: 5px;
+    background-color: rgb(63, 102, 242);
+    color: #fff;
+    text-align: center;
+}
+
+.now-role {
+    margin-left: 8%;
+}
+
+.new-role {
+    margin-right: 8%;
+}
+
+.arrow-img {
+    align-items: center;
+    margin-top: 2%;
+}
+
+.now-role__inner-head,
+.new-role__inner-head {
+    font-weight: bold;
+}
+
+.new-role__inner {
+    border: none;
+    border-radius: 5px;
+    height: 25%;
+}
+
+.role-change__btn-some {
+    text-align: right;
+    margin: 2% 13% 0 0;
+}
+
+.role-change__btn-some button {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(22, 70, 243);
+    color: #fff;
+    margin-left: 2.5%;
+    width: 90px;
+    height: 30px;
+}
+
+
+@media screen and (min-width:900px)and (max-width: 1000px) {
+    .mail-create__btn-submit {
+            text-decoration: none;
+            display: block;
+            background-color: rgb(22, 70, 243);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            height: 40px;
+            width: 80px;
+            padding: 10px 0px 0 5px;
+            margin: 20px auto -15px;
+        }
+
+    
+}
+
+@media screen  and (min-width:769px) and (max-width: 899px) {
+    .mail-create__btn-submit {
+            text-decoration: none;
+            display: block;
+            background-color: rgb(22, 70, 243);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            height: 40px;
+            width: 80px;
+            padding: 10px 0px 0 5px;
+            margin: 20px auto -15px;
+        }
+
+    .user-role__table {
+        border-radius: 5px;
+        background-color: rgb(63, 102, 242);
+        width: 60%;
+        margin: 0 auto;
+        padding-bottom: 15px;
+    }
+
+    .role-table__head-id,
+    .role-table__head-btn {
+        width: 22%;
+    }
+
+}
+
+@media screen and (min-width:550px)  and (max-width: 768px) {
+    .mail-create__btn-submit {
+            text-decoration: none;
+            display: block;
+            background-color: rgb(22, 70, 243);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            height: 40px;
+            width: 80px;
+            padding: 10px 0px 0 5px;
+            margin: 20px auto -25px;
+        }
+
+    .user-role__table {
+        border-radius: 5px;
+        background-color: rgb(63, 102, 242);
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 15px;
+    }
+
+    .role-table__head-id,
+    .role-table__head-btn {
+        width: 22%;
+    }
+
+    .role-change__form {
+        display: block;
+    }
+
+    .role-change__form{
+        text-align: center;
+    }
+
+    .now-role,.new-role {
+        text-align: center;
+        width: 160px;
+        height: 80px;
+            margin: 0 auto 0;
+    }
+
+    img {
+        display: none;
+    }
+
+    .role-change__btn-some {
+        text-align: center;
+        margin: 4% auto 0;
+    }
+
+    .now-role__inner-head,
+    .new-role__inner-head {
+        font-weight: bold;
+        padding: 10px 0 0 0;
+    }
+}
+@media screen   and (max-width: 549px) {
+    .mail-create__btn-submit {
+            text-decoration: none;
+            display: block;
+            background-color: rgb(22, 70, 243);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            height: 40px;
+            width: 80px;
+            padding: 10px 0px 0 5px;
+            margin: 20px auto -25px;
+        }
+
+    .user-role__table {
+        border-radius: 5px;
+        background-color: rgb(63, 102, 242);
+        width: 95%;
+        margin: 0 auto;
+        padding-bottom: 15px;
+    }
+
+    .role-table__head-id,
+    .role-table__head-btn {
+        width: 22%;
+    }
+
+    .role-change__form {
+        display: block;
+    }
+
+    .role-change__form {
+        text-align: center;
+    }
+
+    .now-role,
+    .new-role {
+        text-align: center;
+        width: 160px;
+        height: 80px;
+        margin: 0 auto 0;
+    }
+
+    img {
+        display: none;
+    }
+
+    .role-change__btn-some {
+        text-align: center;
+        margin: 4% auto 0;
+    }
+
+    .now-role__inner-head,
+    .new-role__inner-head {
+        font-weight: bold;
+        padding: 10px 0 0 0;
+    }
+}
+
+

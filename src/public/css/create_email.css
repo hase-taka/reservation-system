@@ -54,3 +54,29 @@
     text-align: center;
     margin: 5px;
 }
+
+@media screen and (min-width: 500px) and (max-width: 900px) {
+    .mail-edit__form-inner {
+    width: 50%;
+    height: 360px;
+    border-radius: 5px;
+    background-color: rgb(63, 102, 242);
+    box-shadow: 3px 3px 5px rgb(119, 118, 118);
+    margin: 0 auto;
+    color: #fff;
+}
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 499px) {
+    .mail-edit__form-inner {
+    width: 90%;
+    height: 360px;
+    border-radius: 5px;
+    background-color: rgb(63, 102, 242);
+    box-shadow: 3px 3px 5px rgb(119, 118, 118);
+    margin: 0 auto;
+    color: #fff;
+}
+
+}

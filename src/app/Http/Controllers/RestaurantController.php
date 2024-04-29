@@ -29,13 +29,15 @@ class RestaurantController extends Controller
         'area' => new NotNull,
         'genre' => new NotNull,
         'content' => 'required',
-        'image' => 'image',
+        'image' => 'required|image',
     ];
 
     $messages = [
         'name.required' => '店舗名は入力してくださいです。',
         'content.required' => '説明を入力してください。',
+        'image.required' => '画像をアップロードしてください',
         'image.image' => '画像は画像ファイルを指定してください。',
+        
     ];
 
     $request->validate($rules, $messages);
@@ -55,6 +57,7 @@ class RestaurantController extends Controller
         // 取得したファイル名で保存
         // storage/app/public/任意のディレクトリ名/
         $request->file('image')->storeAs('public/' . $dir, $file_name);
+        
 
 
         $restaurant = new Restaurant();
@@ -94,19 +97,9 @@ class RestaurantController extends Controller
 
     public function course_store(Request $request){
 
-    // $restaurantId = $request->input('id');
-    // dd($restaurantId);
-    // $restaurantId = $request->restaurantId;
     $id = $request->restaurantId;
         // 既存の店舗情報を取得する
     $restaurant = Restaurant::findOrFail($id);
-
-    // if($request->has_menu == 1){
-    //     // 指定された restaurant_id に対応するコースメニューを削除
-    // CourseMenu::where('restaurant_id', $request->restaurantId)->delete();
-
-    // $restaurant->has_menu = $request->input('has_menu');
-    // $restaurant->save();
 
     // フォームから送信されたデータを取得
     $courseNames = $request->input('course_name');
@@ -122,10 +115,10 @@ class RestaurantController extends Controller
             'price' => $coursePrices[$key]
         ]);
     }
-        return redirect()->route('course_edit', ['id' =>  $restaurant->id]);
+        return redirect()->route('restaurant_edit', ['id' =>  $restaurant->id]);
 
     }
-    
+
 
 
 
@@ -168,13 +161,14 @@ class RestaurantController extends Controller
         'area' => new NotNull,
         'genre' => new NotNull,
         'content' => 'required',
-        'image' => 'image',
+        'image' => 'required|image',
     ];
 
     $messages = [
         'name.required' => '店舗名は入力してくださいです。',
         'content.required' => '説明を入力してください。',
         'image.image' => '画像は画像ファイルを指定してください。',
+        'image.required' => '画像をアップロードしてください。',
     ];
 
     $request->validate($rules, $messages);
@@ -221,26 +215,7 @@ class RestaurantController extends Controller
         // 店舗情報を保存する
         $restaurant->save();
 
-        // if ($request->input('has_menu') == 1) {
-        //     return redirect()->route('course_edit',['id' => $id]);
-        // } else {
             return redirect()->route('store_in_charge');
-        // }
-
-        // return redirect()->route('store_in_charge');
-
-
-
-        // $restaurant = new Restaurant();
-        // $restaurant->name = $request->name;
-        // $restaurant->area_id = $request->area;
-        // $restaurant->genre_id = $request->genre;
-        // $restaurant->content = $request->content;
-        // $restaurant->file_name = $file_name;
-        // $restaurant->file_path = 'storage/' . $dir . '/' . $file_name;
-        // // $restaurant->img_storage = $request->image->store('images');
-        // $restaurant->representative_id = $request->representative_id;
-        // $restaurant->save();
     }
 
     public function reservation_list(Request $request){
@@ -259,11 +234,9 @@ class RestaurantController extends Controller
                                     return $reservationDateTime->gt($now);
                                 });
 
-        // dd($reservations);
-
         return view('restaurant_reservation_list',compact('restaurant','reservations','now','user'));
-        // $restaurants = Reservation::where('restaurant_id',$id)->get();
     }
+
 
     public function course_edit(Request $request){
         $restaurantId = $request->input('id');
@@ -271,14 +244,11 @@ class RestaurantController extends Controller
         $course_menus = CourseMenu::where('restaurant_id',$restaurantId)->get();
 
         return view('course_edit',compact('course_menus','restaurantId','restaurant'));
-
     }
+
 
     public function course_update(Request $request){
 
-    // $restaurantId = $request->input('id');
-    // dd($restaurantId);
-    // $restaurantId = $request->restaurantId;
     $id = $request->restaurantId;
         // 既存の店舗情報を取得する
     $restaurant = Restaurant::findOrFail($id);

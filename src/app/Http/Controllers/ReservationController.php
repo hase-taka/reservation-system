@@ -126,14 +126,7 @@ class ReservationController extends Controller
         $user = $request->user();
 
         $menus = CourseMenu::where('restaurant_id',$id)->get();
-        // restaurantの詳細ページを表示
-        // if ($user->role_id === 1) {
-        //     return view('restaurant_detail_admin', compact('restaurant'));
-        // } elseif ($user->role_id === 2) {
-        //     return view('restaurant_detail_representative', compact('restaurant'));
-        // } else {
-        //     return view('restaurant_detail', compact('restaurant'));
-        // }
+        
 
         return view('restaurant_detail', compact('restaurant','user','menus'));
     }

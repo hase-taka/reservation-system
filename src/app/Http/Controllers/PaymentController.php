@@ -27,7 +27,6 @@ class PaymentController extends Controller
         $reservation = Reservation::where('restaurant_id',$restaurant_id)->where('user_id',$user_id)->latest()
     ->first();
         $reservation_id = $reservation->id;
-        // dd($reservation_id);
 
         return view('payment.create',compact('user','price','number','reservation_id'));
     }
@@ -74,17 +73,5 @@ class PaymentController extends Controller
         return $ex->getMessage();
     }
 
-        // \Stripe\Stripe::setApiKey(config('stripe.stripe_secret_key'));
-
-        // try {
-        //     \Stripe\Charge::create([
-        //         'source' => $request->stripeToken,
-        //         'amount' => 1000,
-        //         'currency' => 'jpy',
-        //     ]);
-        // } catch (Exception $e) {
-        //     return back()->with('flash_alert', '決済に失敗しました！('. $e->getMessage() . ')');
-        // }
-        // return back()->with('status', '決済が完了しました！');
     }
 }

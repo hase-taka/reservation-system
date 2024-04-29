@@ -1,64 +1,91 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# reservation-system
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 概要説明
 
-## About Laravel
+<img width="1424" alt="スクリーンショット 2024-04-29 23 47 41" src="https://github.com/hase-taka/attendance-system/assets/148784913/5dfda12a-88a8-4f12-83f7-ea1191628bcb">
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<img width="1419" alt="スクリーンショット 2024-04-29 23 47 07" src="https://github.com/hase-taka/attendance-system/assets/148784913/bbaa608b-9837-4105-b757-300b42098333">
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+飲食店の予約サービスを作成いたしました。
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 作成目的
 
-## Learning Laravel
+企業から自社自社で予約サービスを持ちたいと依頼を受けたため。
+自社のサービスを持つことで手数料を削減することができる。
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## アプリケーション URL
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   <>
 
-## Laravel Sponsors
+## 機能一覧
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+-   会員登録
+-   ログイン・ログアウト
+-   ユーザー情報取得
+-   ユーザー飲食店お気に入り一覧取得
+-   ユーザー飲食店予約情報取得
+-   飲食店一覧取得
+-   飲食店詳細取得
+-   飲食店お気に入り追加
+-   飲食店お気に入り削除
+-   飲食店予約情報追加
+-   飲食店予約情報削除
+-   エリアで検索する
+-   ジャンルで検索する
+-   店名で検索する
+-   stripe を利用し、カード決済
+-   予約日の朝にリマインダーメール送信
+-   管理者から利用者へのメール送信
+-   予約の QR コード作成
+-   店舗ごとの予約情報一覧
+-   認証と予約時の Form Request によるバリデーション
+-   My_page から予約の変更
+-   評価機能（レビュー）
+-   飲食店舗の追加、コース設定（店舗代表のみ）
+-   飲食店舗の編集、コースの編集（店舗代表のみ）
+-   ユーザの一覧（管理者のみ）
+-   ユーザの権限変更（管理者のみ）
 
-### Premium Partners
+## 使用技術
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+-   PHP 7.49
+-   Laravel 8.83.8
+-   Mysql 8.0.26
 
-## Contributing
+## テーブル設計
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<img width="600" alt="スクリーンショット 2024-04-29 23 00 53" src="https://github.com/hase-taka/attendance-system/assets/148784913/6afe7b5d-ff2c-4524-929d-996d8e2d9d86">
 
-## Code of Conduct
+## ER 図
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<img width="600" alt="スクリーンショット 2024-04-27 1 28 39" src="https://github.com/hase-taka/attendance-system/assets/148784913/a7cad675-862c-4a5c-b1f8-5d7a48b99422">
 
-## Security Vulnerabilities
+## 環境構築
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Docker ビルド
 
-## License
+1. git clone
+2. docker-compose up -d --build
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Laravel 環境構築
+
+1. docker-compose exec php bash
+2. composer install
+3. .env.example ファイルから.env ファイルを作成し、環境変数を変更
+4. php artisan key:generate
+5. php artisan migrate
+6. php artisan db:seed
+7. php artisan schedule:work
+
+## URL
+
+-   開発環境:<http://localhost/>
+-   phpMyAdmin:<http://localhost:8080/>
+
+##
+
+-   test user として admin(管理者)、representative(店舗代表)、user(利用者)を用意しました。パスワードはすべて「password」と設定しています。
+
+1. admin mail:a@a
+2. representative mail:b@b
+3. user mail:c@c

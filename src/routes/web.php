@@ -8,6 +8,7 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\QrController;
 
 use App\Models\Restaurant;
 use App\Models\User;
@@ -64,7 +65,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::delete('/reservation/{id}', [ReservationController::class, 'destroy'])->name('reservation.destroy');
 
     Route::get('/users', [UserController::class, 'users'])->name('users.list');
+    Route::get('/users/role_change', [UserController::class, 'role_change'])->name('role_change');
     Route::post('/users/{id}/update_role', [UserController::class, 'update_role'])->name('users.update_role');
+
 
     Route::get('/store_in_charge', [UserController::class, 'store_in_charge_list'])->name('store_in_charge');
 
@@ -77,6 +80,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/restaurant/review', [ReviewController::class, 'create'])->name('restaurant_review');
     Route::post('/restaurant/review', [ReviewController::class, 'store'])->name('restaurant_review_store');
+
     Route::get('/restaurant/reservation_list', [RestaurantController::class, 'reservation_list'])->name('restaurant_reservation_list');
 
 
@@ -96,7 +100,12 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/course_update', [RestaurantController::class, 'course_update'])->name('course_update');
     Route::get('/course_addition', [RestaurantController::class, 'course_addition'])->name('course_addition');
     Route::post('/course_addition', [RestaurantController::class, 'course_store'])->name('course_store');
+
+
+    Route::get('/qr',[QrController::class, 'qr_create'])->name('qr_create');
 });
+
+
 
 Route::middleware(['auth', 'verified'])->get('/', function (Request $request) {
     // ユーザーはメール確認を完了している必要があります

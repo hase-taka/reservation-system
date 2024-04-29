@@ -133,7 +133,7 @@
     border: none;
     color: #fff;
     line-height: 40px;
-    margin-top: 50%;
+    margin-top: 297px;
     cursor:pointer;
     top: 50%;
    
@@ -210,9 +210,14 @@
     
     .restaurant-detail {
         width: 90%;
-        margin: 6% auto 15%;
+        margin: 6% auto 20%;
         text-align: center;
     }
 
+    .restaurant__content-inner{
+        padding-bottom: 20px;
+    }
+
+    
 
 }

@@ -227,31 +227,157 @@
 
 
 
-@media screen and (min-width:921px) and (max-width: 1140px) {
 
-}
 
-@media screen and (min-width:769px) and (max-width: 920px) {
+@media screen and (min-width:769px) and (max-width: 1027px) {
 
+    .my-page__wrap {
+            display: block;
+        }
+    
+    .reservation-status__wrap {
+        display: flex;
+        /* width: 100%; */
+        flex-wrap: wrap;
+    }
+
+    .my-page__inner-reservation {
+        width: 100%;
+        margin: 0 0 0 7%;
+    }
+
+    .reservation-status__inner {
+        width: 350px;
+        height: 350px;
+        border-radius: 5px;
+        background-color: rgb(63, 102, 242);
+        box-shadow: 3px 3px 5px rgb(119, 118, 118);
+        margin: 10px;
+    }
+
+    .reservation__some-btn {
+        display: block;
+        justify-content: space-between;
+        margin: 6% auto;
+        padding-bottom: 3%;
+    }
+
+    .reservation__qr-btn,
+    .restaurant__review-btn {
+        text-align: center;
+    }
+
+    .reservation__modification-paid {
+        color: #fff;
+        width: 180px;
+        margin: 10px auto;
+    }
+
+    .reservation__modification-btn {
+        text-align: center;
+        margin: 15px;
+    }
+
+    .my-page__inner-restaurant {
+        width: 100%;
+        margin: 7%;
+    }
+
+    .restaurant-list-card {
+        width: 260px;
+        height: 300px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 2px 2px 5px rgb(119, 118, 118);
+        margin: 0 20px 30px 0;
+    }
+
+    .restaurant-list-card__wrap {
+        display: flex;
+        flex-flow: row wrap;
+        flex-direction: row;
+        justify-content: left;
+        /* margin-right: 10%; */
+    }
+
+    .restaurant__review-btn {
+        text-align: center;
+        margin-top: 20px;
+    }
 }
 
 @media screen and (max-width: 768px) {
 
-    /* .my-page__wrap {
+    .my-page__wrap {
             display: block;
-            
+        }
+
+    .reservation-status__wrap {
+        display: flex;
+        /* width: 100%; */
+        flex-wrap: wrap;
     }
 
-    .reservation-status__wrap{
-        display: flex;
-        
+    .my-page__inner-reservation {
+        width: 100%;
+        margin: 0 0 0 7%;
     }
 
     .reservation-status__inner {
-        width: 100%;
+        width: 350px;
+        height: 350px;
         border-radius: 5px;
         background-color: rgb(63, 102, 242);
         box-shadow: 3px 3px 5px rgb(119, 118, 118);
-        margin: 0 10px 0 10px;
-    } */
+        margin: 10px;
+    }
+
+    .reservation__some-btn {
+        display: block;
+        justify-content: space-between;
+        margin: 6% auto;
+        padding-bottom: 3%;
+    }
+
+    .reservation__qr-btn,
+    .restaurant__review-btn{
+        text-align: center;
+    }
+
+    .reservation__modification-paid {
+        color: #fff;
+        width: 180px;
+        margin: 10px auto;
+    }
+
+    .reservation__modification-btn{
+        text-align: center;
+        margin: 15px;
+    }
+
+    .my-page__inner-restaurant {
+        width: 100%;
+        margin: 7%;
+    }
+    
+    .restaurant-list-card {
+        width: 260px;
+        height: 300px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 2px 2px 5px rgb(119, 118, 118);
+        margin: 0 20px 30px 0;
+    }
+
+    .restaurant-list-card__wrap {
+        display: flex;
+        flex-flow: row wrap;
+        flex-direction: row;
+        justify-content:left;
+    }
+
+    .restaurant__review-btn {
+        text-align: center;
+        margin-top: 20px;
+    }
 }
