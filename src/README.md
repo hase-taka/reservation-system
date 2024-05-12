@@ -15,7 +15,7 @@
 
 ## アプリケーション URL
 
--   <>
+-   <http://13.115.165.232>
 
 ## 機能一覧
 
@@ -35,21 +35,21 @@
 -   店名で検索する
 -   stripe を利用し、カード決済
 -   予約日の朝にリマインダーメール送信
--   管理者から利用者へのメール送信
 -   予約の QR コード作成
--   店舗ごとの予約情報一覧
 -   認証と予約時の Form Request によるバリデーション
 -   My_page から予約の変更
 -   評価機能（レビュー）
 -   飲食店舗の追加、コース設定（店舗代表のみ）
 -   飲食店舗の編集、コースの編集（店舗代表のみ）
+-   店舗ごとの予約情報一覧
+-   管理者から利用者へのメール送信(管理者のみ)
 -   ユーザの一覧（管理者のみ）
 -   ユーザの権限変更（管理者のみ）
 
 ## 使用技術
 
--   PHP 7.49
--   Laravel 8.83.8
+-   PHP 8.128
+-   Laravel 8.83.27
 -   Mysql 8.0.26
 
 ## テーブル設計
@@ -82,10 +82,10 @@ Laravel 環境構築
 -   開発環境:<http://localhost/>
 -   phpMyAdmin:<http://localhost:8080/>
 
-##
+##　　備考
 
--   test user として admin(管理者)、representative(店舗代表)、user(利用者)を用意しました。パスワードはすべて「password」と設定しています。
+-   test user として admin(管理者)、店舗代表 a•b•c(店舗代表)、user(利用者)を用意しました。パスワードはすべて「password」と設定しています。
 
-1. admin mail:a@a
-2. representative mail:b@b
-3. user mail:c@c
+1. admin mail:test@test
+2. 店舗代表 a•b•c mail:a@a/b@b/c@c
+3. user mail:user@user

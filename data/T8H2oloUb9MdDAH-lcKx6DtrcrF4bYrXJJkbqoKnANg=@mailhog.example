@@ -1,0 +1,63 @@
+HELO:<[127.0.0.1]>
+FROM:<example@example.com>
+TO:<a@a>
+
+Message-ID: <9ec5f82655432df7db4203c0ba689117@swift.generated>
+Date: Tue, 30 Apr 2024 01:08:34 +0900
+Subject: Reservation Reminder
+From: Laravel <example@example.com>
+To: a@a
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"ja">
+<head>
+    <meta charset=3D"UTF-8"=
+>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1.0">
+    <title>Reservation Reminder</title>
+
+    <style>
+  =
+  .email-content{
+        list-style: none;
+    }
+    </style>
+</he=
+ad>
+<body>
+    <h1>Reservation Reminder</h1>
+   =20
+    <p>=E3=81=
+=93=E3=82=93=E3=81=AB=E3=81=A1=E3=82=8F =E5=BA=97=E8=88=97=E4=BB=A3=
+=E8=A1=A8a =E6=A7=98,</p>
+   =20
+    <p>=E3=81=94=E4=BA=88=E7=B4=84=
+=E3=81=AB=E9=96=A2=E3=81=99=E3=82=8B=E3=81=94=E9=80=A3=E7=B5=A1:</p>
+    =
+
+    <ul>
+        <li class=3D"email-content">Restaurant: =E7=89=9B=
+=E5=8A=A9</li>
+        <li class=3D"email-content">Date: 2024-04-30</li>=
+
+        <li class=3D"email-content">Time: 16:40:00</li>
+        <li cl=
+ass=3D"email-content">Time: 2=E5=90=8D</li>
+    </ul>
+    <div>
+    <=
+p>=E3=81=94=E4=B8=8D=E6=98=8E=E3=81=AA=E7=82=B9=E3=80=81=E3=81=94=E5=A4=
+=89=E6=9B=B4=E3=81=8C=E5=BF=85=E8=A6=81=E3=81=AA=E5=A0=B4=E5=90=88=E3=81=
+=AF=E3=80=81=E3=81=93=E3=81=A1=E3=82=89=E3=81=BE=E3=81=A7=E3=81=94=E9=80=
+=A3=E7=B5=A1=E3=81=8F=E3=81=A0=E3=81=95=E3=81=84=E3=80=82</p>
+    </div>=
+
+    <div>
+    <p>011-0000-0000</p>
+    </div>
+</body>
+</html>
