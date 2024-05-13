@@ -20,9 +20,7 @@
                     <td class="table-data">
                         <select class="representative_id" name="representative_id">
                             @foreach($users as $user)
-                            <!-- @if($user->role_id == 2) -->
                                 <option value="{{ $user->id }}">{{ $user->name }}</option>
-                            <!-- @endif -->
                             @endforeach
                         </select>
                     </td>

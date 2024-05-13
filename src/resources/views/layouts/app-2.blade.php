@@ -36,7 +36,6 @@
             <li><a href="/register">Registration</a></li>
             <li><a href="/login">Login</a></li>
         </ul>
-        
     </header>
     <main class="main">
         <div class="main__inner">

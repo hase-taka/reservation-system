@@ -38,8 +38,8 @@
     </table>
 </div>
 <div class="pagination">
-        {{ $users->links('pagination::default') }}
-    </div>
+    {{ $users->links('pagination::default') }}
+</div>
 
 
 <!-- モーダルウィンドウ -->

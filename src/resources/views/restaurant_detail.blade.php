@@ -11,7 +11,6 @@
         <div class="restaurant-detail__header">
             <div class="return-page__btn">
                 <a class="return-page__btn-submit" href="/"><</a>
-                <!-- url()->previous() -->
             </div>
             <div class="restaurant-detail-name">
                 <h2 class="restaurant-detail-name__inner">{{ $restaurant->name }}</h2>
@@ -49,7 +48,7 @@
                         </td>
                     </tr>
                 </div>
-                @endif   
+                @endif
                 <input class="reservation-form__item-input"  type="time" id="timeInput" name="time"  placeholder="Enter time" step="600">
                 @if ($errors->has('time'))
                 <div class="error-message">
@@ -76,7 +75,7 @@
                         </td>
                     </tr>
                 </div>
-                @endif   
+                @endif
                 @if($restaurant->has_menu == 1)
                 <select class="reservation-form__item-select" name="course_price" id="courseSelect" oninput="displayInput()" >
                     <option value="">コースを希望の場合は選択してください</option>
@@ -94,8 +93,7 @@
         </div>
         </form>
 
-
-            <script>
+        <script>
         // ページ読み込み時に確認情報を表示する関数
         $(document).ready(function() {
             // 各入力フィールドの初期値を取得
@@ -110,7 +108,6 @@
             confirmationHTML += '<div class="confirm-container"><p class="confirm-h">Date</p><p class="confirm-d">'    + date + '</p></div>';
             confirmationHTML += '<div class="confirm-container"><p class="confirm-h">Time</p><p class="confirm-d">'    + time + '</p></div>';
             confirmationHTML += '<div class="confirm-container"><p class="confirm-h">Number</p><p class="confirm-d-n">'  + partySize + '</p></div>';
-            // confirmationHTML += '<div class="confirm-container"><p class="confirm-h">Course</p><p class="confirm-d-n">'  + courseSelect + '</p></div>';
 
             $('#displayArea').html(confirmationHTML);
         });

@@ -31,7 +31,6 @@
                 <tr class="table-row">
                     <td class="table-data">
                         <input  class="nickname" type="text" name="nickname" placeholder="名前またはニックネーム">
-                        <!-- <input type="hidden" name="user_id" value="{{ $reservation->user_id }}"> -->
                     </td>
                 </tr>
                 <tr class="table-row">
@@ -39,7 +38,6 @@
                         ※未入力の場合はユーザーネームでの投稿となります。
                     </td>
                 </tr>
-                
                 <tr class="table-row">
                     <th class="table-head">評価</th>
                 </tr>
@@ -81,7 +79,6 @@
                     @endif
                     </td>
                 </tr>
-                
             </table>
         </div>
         <div class="restaurant-review__form-button">

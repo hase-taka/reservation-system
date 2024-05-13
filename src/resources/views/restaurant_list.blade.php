@@ -25,7 +25,6 @@
         $('.favorite-btn').click(function(){
             var restaurantId = $(this).data('restaurant-id');
             var button = $(this);
-            
             $.ajax({
                 url: '/favorites/toggle/' + restaurantId,
                 method: 'POST',
@@ -92,7 +91,6 @@
         </div>
         <div class="restaurant-list-card__content-btn">
             <a class="restaurant-detail__btn" href="{{ route('restaurant-detail', ['id' => $restaurant->id]) }}">詳しくみる</a>
-            <!-- <i class="fa-solid fa-heart fa-xl favorite-btn" data-restaurant-id="{{ $restaurant->id }}" id="favoriteButton"></i> -->
             <button class="favorite-btn" data-restaurant-id="{{ $restaurant->id }}" style="color:{{ $restaurant->isFavorite(auth()->id()) ? 'red' : 'rgb(216, 216, 216)' }}">
         <i class="fa fa-heart fa-xl "></i>
     </button>

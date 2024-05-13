@@ -51,5 +51,4 @@
         courseFields.appendChild(newCourseField);
     });
 </script>
-
 @endsection

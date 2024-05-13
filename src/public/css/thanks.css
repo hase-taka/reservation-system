@@ -3,8 +3,6 @@
     border-radius: 5px;
     background-color: #fff;
     width: 28%;
-  
-    /* text-align: center; */
     margin: 50px auto;
     box-shadow: 2px 2px 5px rgb(119, 118, 118);
 }
@@ -52,5 +50,4 @@
         box-shadow: 2px 2px 5px rgb(119, 118, 118);
     }
 
-    /* ここにタブレットやスマートフォン用のスタイルを記述します */
 }

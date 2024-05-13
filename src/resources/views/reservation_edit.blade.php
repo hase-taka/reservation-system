@@ -56,12 +56,10 @@
             <input type="hidden" name="restaurant_id" value="{{ $reservation->restaurant->id }}">
             <div class="reservation__edit-table">
                 <table class="reservation__edit-table--inner">
-                
                     <tr class="edit-form__row">
                         <td class="edit-form__head">Shop</td>
                         <td class="edit-form__data"><p class="restaurant-name" name="restaurant-name">{{ $reservation->restaurant->name }}</p></td>
                     </tr>
-                
                     <tr class="edit-form__row">
                         <td class="edit-form__head">Date</td>
                         <td class="edit-form__data"><input class="edit-form__item-input" type="date" name="date"></td>
@@ -127,6 +125,4 @@
         </form>
     </div>
 </div>
-
-
 @endsection

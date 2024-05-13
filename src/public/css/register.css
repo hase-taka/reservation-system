@@ -4,7 +4,6 @@
     background-color: #fff;
     width: 28%;
     height: 20%;
-    /* text-align: center; */
     margin:50px auto;
     box-shadow: 2px 2px 5px rgb(119, 118, 118);
 }
@@ -54,10 +53,8 @@
         background-color: #fff;
         width: 50%;
         height: 20%;
-        /* text-align: center; */
         margin: 50px auto;
         box-shadow: 2px 2px 5px rgb(119, 118, 118);
     }
 
-    /* ここにタブレットやスマートフォン用のスタイルを記述します */
 }

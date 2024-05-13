@@ -62,12 +62,7 @@
 .new-course__row-head{
     line-height: 10px;
 }
-/* .new-course__row{
-    margin-bottom: 10px;
-} */
-/* .course-name,.course-price{
-    width: 100px;
-} */
+
 
 .course-edit__btn,
 .course-addition__btn-wrap{
@@ -122,7 +117,7 @@
             margin: 0 auto;
             color: #fff;
         }
-    
+
     .new-course__form {
         width: 40%;
         border-radius: 5px;
@@ -142,7 +137,7 @@
             margin: 0 auto;
             color: #fff;
         }
-    
+
     .new-course__form {
         width: 65%;
         border-radius: 5px;
@@ -162,7 +157,7 @@
             margin: 0 auto;
             color: #fff;
         }
-    
+
     .new-course__form {
         width: 95%;
         border-radius: 5px;

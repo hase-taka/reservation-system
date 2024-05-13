@@ -22,11 +22,6 @@
                     @error('email')
                     {{ $message }}
                     @enderror
-                    <!-- @if ($errors->has('email'))
-                  <span class="invalid-feedback" role="alert">
-                    {{ $errors->first('email') }}
-                  </span>
-                @endif -->
                 </div>
             </div>
             <div class="login-form__group">
@@ -36,21 +31,12 @@
                     @error('password')
                     {{ $message }}
                     @enderror
-                    <!-- @if ($errors->has('error'))
-                  <span class="invalid-feedback" role="alert">
-                    {{ $errors->first('error') }}
-                  </span>
-                @endif -->
                 </div>
             </div>
             <div  class="login-form__btn">
             <input class="login-form__btn-submit" type="submit" value="ログイン">
             </div>
         </form>
-        <!-- <div class="register-transition__form">
-            <p class="register-nav">アカウントをお持ちでない方はこちらから</p>
-            <a class="register-transition__btn" href="/register">会員登録</a>
-        </div> -->
     </div>
 </div>
 

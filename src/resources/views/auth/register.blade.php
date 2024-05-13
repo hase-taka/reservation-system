@@ -43,22 +43,10 @@
                     @enderror
                 </p>
             </div>
-            <!-- <div class="register-form__group">
-                <input class="register-form__input" type="password" name="password-confirm" id="password-confirm" placeholder="確認用パスワード">
-                <p class="register-form__error-message">
-                    @error('password')
-                    {{ $message }}
-                    @enderror
-                </p>
-            </div> -->
             <div class="register-form__btn">
             <input class="register-form__btn-submit" type="submit" value="登録">
             </div>
         </form>
-        <!-- <div class="login-transition__form">
-            <p class="login-nav">アカウントをお持ちの方はこちらから</p>
-            <a class="login-transition__btn" href="/login">ログイン</a>
-        </div> -->
     </div>
 </div>
 @endsection

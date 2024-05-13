@@ -162,54 +162,17 @@ class ReservationController extends Controller
         ]);
 
         $restaurant_id = $request->restaurant_id;
-        // if ($user->role_id === 1) {
-        //     return view('done_admin');
-        // } elseif ($user->role_id === 2) {
-        //     return view('done_representative');
-        // } else {
-        //     return view('done');
-        // }
 
         return view('done',compact('user','course_price','number','restaurant_id','user_id'));
     }
 
-
-    // public function update(Request $request, $id)
-    // {
-    //     // バリデーションなどの適切な処理を行う
-    //     $validatedData = $request->validate([
-    //         'date' => 'required|date',
-    //         'time' => 'required',
-    //         'number' => 'required|integer|min:1',
-    //     ]);
-
-    //     // 予約を更新する
-    //     $reservation = Reservation::findOrFail($id);
-    //     $reservation->date = $request->date;
-    //     $reservation->time = $request->time;
-    //     $reservation->number = $request->number;
-    //     $reservation->save();
-
-    //     // リダイレクトなど適切なレスポンスを返す
-    //     return response()->json(['message' => '予約が更新されました']);
-    // }
 
     public function edit(Request $request,$id)
     {
         $reservation = Reservation::findOrFail($id);
         $user = $request->user();
         $restaurant = Restaurant::where('id',$reservation->restaurant_id)->get();
-        // dd($restaurant->has_menu);
         $menus = CourseMenu::where('restaurant_id',$reservation->restaurant_id)->get();
-
-        // if ($user->role_id === 1) {
-        //     return view('reservation_edit_admin', compact('reservation'));
-        // } elseif ($user->role_id === 2) {
-        //     return view('reservation_edit_representative', compact('reservation'));
-        // } else {
-        //     return view('reservation_edit', compact('reservation'));
-        // }
-
 
         return view('reservation_edit', compact('reservation','user','restaurant','menus'));
     }
@@ -219,17 +182,12 @@ class ReservationController extends Controller
     public function update(ReservationStoreRequest $request, $id)
     {
         $reservation = Reservation::findOrFail($id);
-        // バリデーションなどの適切な処理を行う
-        // $validatedData = $request->validate([
-        //     'date' => 'required|date',
-        //     'time' => 'required',
-        //     'number' => 'required|integer|min:1',
-        // ]);
+
         $today = Carbon::now()->format('Y-m-d');
         $now = Carbon::now()->format('H:i');
         $inputDate = $request->date;
         $inputTime = $request->time;
-        // dd($today);
+
         if( $today == $inputDate && $now > $inputTime ){
             return redirect()->back()->with('error','※只今の日時以降の入力を行なってください');
         };
@@ -247,8 +205,6 @@ class ReservationController extends Controller
             'course_price' => $request->course_price,
         ]);
 
-        // 更新後に適切な処理を行う（リダイレクトなど）
-        // return redirect()->route('my_page')->with('success', '予約が更新されました');
 
         $course_price = $request->course_price;
         $number = $request->number;

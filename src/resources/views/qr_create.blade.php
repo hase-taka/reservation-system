@@ -10,7 +10,6 @@
 @section('content')
 <div class="return-page__btn">
     <a class="return-page__btn-submit" href="{{route('my_page')}}"><</a>
-    <!-- url()->previous() -->
 </div>
 <div class="qr-code__wrap">
     <div class="qr-code__title">

@@ -36,15 +36,6 @@
 </div>
 
 <script>
-    // // 金額入力フォームの値が変更されたときに、支払いボタンの金額を更新する
-    // document.getElementById('amount').addEventListener('input', function() {
-    //     var amount = this.value; // 入力された金額を取得
-    //     var stripeButton = document.querySelector('.stripe-button');
-
-    //     // 支払いボタンのdata-amount属性に入力された金額をセット
-    //     stripeButton.setAttribute('data-amount', 'amount');
-    // });
-
      // 金額入力フォームの値が変更されたときに、支払いボタンの金額を更新する
     document.getElementById('amount').addEventListener('input', function() {
         var amount = this.value; // 入力された金額を取得

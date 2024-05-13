@@ -17,14 +17,6 @@ class ReviewController extends Controller
 
         $user = $request->user();
 
-        // if ($user->role_id === 1) {
-        //     return view('restaurant_review_admin', compact('reservation'));
-        // } elseif ($user->role_id === 2) {
-        //     return view('restaurant_review_representative', compact('reservation'));
-        // } else {
-        //     return view('restaurant_review', compact('reservation'));
-        // }
-
         return view('restaurant_review', compact('reservation','user'));
     }
 
@@ -51,8 +43,8 @@ class ReviewController extends Controller
 
     // ユーザーIDと店舗IDの組み合わせがすでに存在するかどうかを確認
     $existingReview = Review::where('user_id', $userId)
-                             ->where('restaurant_id', $restaurantId)
-                             ->first();
+                            ->where('restaurant_id', $restaurantId)
+                            ->first();
 
     // もし組み合わせが存在する場合はエラーメッセージを表示して保存を拒否
     if ($existingReview) {
@@ -84,5 +76,4 @@ class ReviewController extends Controller
     return redirect()->route('my_page')->with('success', 'レビューを投稿し、関連の予約を削除されました。');
     }
 
-        
 }

@@ -1,5 +1,3 @@
-
-
 .search-form{
     width:44%;
     position: absolute;
@@ -16,7 +14,6 @@
     height:40px;
 }
 
-
 .area-name__select,.genre-name__select,.restaurant-name__item{
     border: none;
     background-color: #fff;
@@ -31,10 +28,6 @@
 
 .restaurant-name__item{
     width: 79%;
-}
-
-.area-name__select:first-child,.genre-name__select:first-child{
-    /* color: grey; */
 }
 
 .search-icon{
@@ -55,7 +48,6 @@
     color: red;
     /* クリック時の色 */
 }
-
 
 .restaurant-list-card{
     width:300px;
@@ -101,7 +93,6 @@
     background-color: rgb(22, 70, 243);
     text-decoration: none;
     color:#fff;
-    /* font-size: 20px; */
     padding: 2px 12px;
     font-size: 14px;
 }
@@ -125,5 +116,4 @@
             margin: 0 3.2% 30px 3.2%;
         }
 
-    /* ここにタブレットやスマートフォン用のスタイルを記述します */
 }

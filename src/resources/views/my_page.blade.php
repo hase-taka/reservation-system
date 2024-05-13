@@ -40,7 +40,7 @@ $(document).ready(function() {
     // 予約の変更フォームが送信されたときの処理
     $('#editReservationForm').submit(function(event) {
         event.preventDefault();
-        
+
         var reservationId = $('#reservationId').val();
         var date = $('#date').val();
         var time = $('#time').val();
@@ -72,7 +72,7 @@ $(document).ready(function() {
     // 予約のキャンセルボタンがクリックされたときの処理
     $('.cancel-reservation').click(function() {
         var reservationId = $(this).data('reservation-id');
-        
+
         if (confirm("本当に予約をキャンセルしますか？")) {
             $.ajax({
                 url: '/reservation/' + reservationId,
@@ -102,9 +102,7 @@ $(document).ready(function() {
 </div>
 <div class="my-page__wrap">
     <div class="my-page__inner-reservation">
-        
         <p class="my-page__reservation-status">予約状況</p>
-        
         <div class="reservation-status__wrap">
         @if ($user->reservations->count() > 0)
         @foreach($user->reservations as $index => $reservation)
@@ -116,7 +114,6 @@ $(document).ready(function() {
                     </div>
                     <div class="reservation__cancel-btn">
                         <button class="btn btn-danger cancel-reservation" data-reservation-id="{{ $reservation->id }}"><img src="images/cancel.png" alt="cancel-icon" width="25px" height="25px"></button>
-                        <!-- <button class="reservation__cancel-btn__submit"><img src="img/cancel.png" alt="cancel-icon" width="25px" height="25px"></button> -->
                     </div>
                 </div>
                 <div class="reservation-table">
@@ -154,9 +151,6 @@ $(document).ready(function() {
                 <div class="reservation__some-btn">
                     <div class="reservation__qr-btn">
                         <a class="reservation__qr-btn-submit" href="{{ route('qr_create', ['reservation_id' => $reservation->id,'date' => $reservation->date,'time' => date('H:i', strtotime($reservation->time)),'restaurant_id' => $reservation->restaurant_id,'user_id' => $user->id,'number' => $reservation->number,'paid' => $reservation->paid,'course' => $reservation->course_name]) }}">QRコード作成</a>
-                        <!-- <form action="" method="post">
-                            <button class="reservation__qr-btn-submit" type="submit">QRコードを作成</button>
-                        </form> -->
                     </div>
                     @php
                         $reservationDateTime = $reservation->date . ' ' . $reservation->time;
@@ -170,8 +164,6 @@ $(document).ready(function() {
                         @if($reservation->paid == 0)
                         <div class="reservation__modification-btn">
                             <a href="{{ route('reservation.edit', $reservation->id) }}">予約変更</a>
-                            <!-- <button class="btn btn-primary edit-reservation" data-toggle="modal" data-target="#reservationModal" data-reservation-id="{{ $reservation->id }}">予約変更</button> -->
-                            <!-- <button class="reservation__modification-btn__submit">予約変更</button> -->
                         </div>
                         @else
                         <div class="reservation__modification-paid"><p class="paid-message">決済済みのためMypageからの予約変更不可</p></div>

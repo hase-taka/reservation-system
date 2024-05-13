@@ -25,36 +25,18 @@ class UserController extends Controller
         // ユーザーに関連する予約を取得
         $reservations = $user->reservations()->with('restaurant')->get();
 
-        
-
         // ユーザーに関連するお気に入りのレストランを取得
         $favorites = $user->favorites()->with('restaurant')->get();
-
-        // Mypageビューにログイン中のユーザー、予約、お気に入りのレストランデータを渡す
-        // if ($user->role_id === 1) {
-        //     return view('my_page_admin', compact('user', 'reservations', 'favorites','now'));
-        // } elseif ($user->role_id === 2) {
-        //     return view('my_page_representative', compact('user', 'reservations', 'favorites','now'));
-        // } else {
-        //     return view('my_page', compact('user', 'reservations', 'favorites','now'));
-        // }
 
 
         return view('my_page', compact('user','reservations','favorites','now'));
 
-
-        // return view('my_page', [
-        //     'user' => $user,
-        //     'reservations' => $reservations,
-        //     'favorites' => $favorites,
-        // ]);
     }
-    
+
 
 
     public function users(Request $request)
     {
-        
         $users = User::paginate(7);
 
         $user = auth()->user();
@@ -67,7 +49,6 @@ class UserController extends Controller
             return redirect()->route('restaurant_list');
         }
 
-        // return view('users_role_change', compact('users'));
     }
 
     public function role_change(Request $request){
@@ -95,7 +76,6 @@ class UserController extends Controller
         $areas = Area::all();
         $genres = Genre::all();
 
-        // $restaurants = $user->representative()->with('restaurant')->get();
         $restaurants = Restaurant::where('representative_id', $user->id)->get();
 
         if ($user->role_id === 2) {
@@ -105,7 +85,4 @@ class UserController extends Controller
             return redirect()->route('restaurant_list');
         }
     }
-
-
-    
 }

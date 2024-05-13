@@ -34,7 +34,6 @@
     <div class="new-course__form">
         <form class="new-course__form-inner" action="{{ route('course_update') }}" method=post>
         @csrf
-            
             <div class="new-course__table">
                 <table class="new-course__table-inner">
                     <tr class="table-row">
@@ -44,7 +43,6 @@
                             <input class="restaurant-course" type="radio" name="has_menu" value="1" >有り
                         </td>
                     </tr>
-                    
                     <tr class="new-course__row-head">
                         <th><p>コース名</p></th>
                         <th><p>金額</p></th>
@@ -71,15 +69,6 @@
     </div>
 </div>
 
-<!-- <div id="course_fields">
-        <div class="course_field">
-            <label for="course_name">コース名</label>
-            <input type="text" name="course_name[]" class="course_name">
-            <label for="course_price">価格</label>
-            <input type="text" name="course_price[]" class="course_price">
-        </div>
-    </div> -->
-
 <script>
     document.getElementById('add_course').addEventListener('click', function() {
         var courseFields = document.getElementById('course_fields');
@@ -92,32 +81,4 @@
         courseFields.appendChild(newCourseField);
     });
 </script>
-<!-- <script>
-    // ページの読み込みが完了したときに実行
-    document.addEventListener('DOMContentLoaded', function() {
-        // 「有り」ラジオボタンの要素を取得
-        var hasMenuYes = document.querySelector('input[value="1"]');
-        // コース入力フィールドの親要素
-        var courseFields = document.getElementById('course_fields');
-        // コース入力フィールドを非表示にする
-        courseFields.style.display = 'none';
-
-        // ラジオボタンが変更されたときの処理
-        hasMenuYes.addEventListener('change', function() {
-            // 「有り」が選択されたかどうかをチェック
-            if (hasMenuYes.checked) {
-                // コース入力フィールドを表示
-                courseFields.style.display = 'block';
-            } else {
-                // コース入力フィールドを非表示
-                courseFields.style.display = 'none';
-            }
-        });
-
-        // 「有り」が最初から選択されている場合はコース入力フィールドを表示
-        if (hasMenuYes.checked) {
-            courseFields.style.display = 'block';
-        }
-    });
-</script> -->
 @endsection

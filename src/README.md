@@ -82,7 +82,7 @@ Laravel 環境構築
 -   開発環境:<http://localhost/>
 -   phpMyAdmin:<http://localhost:8080/>
 
-##　　備考
+## 備考
 
 -   test user として admin(管理者)、店舗代表 a•b•c(店舗代表)、user(利用者)を用意しました。パスワードはすべて「password」と設定しています。
 

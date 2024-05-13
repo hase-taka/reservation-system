@@ -37,18 +37,10 @@ class RestaurantController extends Controller
         'content.required' => '説明を入力してください。',
         'image.required' => '画像をアップロードしてください',
         'image.image' => '画像は画像ファイルを指定してください。',
-        
+
     ];
 
     $request->validate($rules, $messages);
-        // バリデーションなどの処理を行う
-// dd($request);
-        // 画像の保存などを行う
-        // if ($request->hasFile('image')) {
-        //     $restaurant->img_storage = $request->image->store('images');
-        // }
-
-        // レストランを作成し、代表者IDも設定する
 
         // ディレクトリ名
         $dir = 'images';
@@ -67,7 +59,7 @@ class RestaurantController extends Controller
         $restaurant->content = $request->content;
         $restaurant->file_name = $file_name;
         $restaurant->file_path = 'storage/' . $dir . '/' . $file_name;
-        // $restaurant->img_storage = $request->image->store('images');
+
         $restaurant->representative_id = $request->representative;
         $restaurant->has_menu = $request->has_menu;
         $restaurant->save();
@@ -81,14 +73,11 @@ class RestaurantController extends Controller
             return redirect()->route('store_in_charge');
         }
 
-        // リダイレクトなど適切な処理を行う
-        // return redirect()->route('store_in_charge');
     }
 
     public function course_addition(Request $request){
         $restaurantId = $request->input('id');
         $restaurant = Restaurant::findOrFail($restaurantId);
-        // $course_menus = CourseMenu::where('restaurant_id',$restaurantId)->get();
 
         return view('course_addition',compact('restaurantId','restaurant'));
 
@@ -120,17 +109,7 @@ class RestaurantController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
     public function edit(Request $request){
-        
-
         $user = $request->user();
 
         if ($user->role_id === 2) {
@@ -142,7 +121,7 @@ class RestaurantController extends Controller
 
             $user_id = $restaurant->representative_id;
             $representative = User::findOrFail($user_id);
-            // dd($representative);
+
             $representative_name = $representative->name;
 
             return view('restaurant_edit', compact('restaurant','users','representative_name','user'));
@@ -175,17 +154,13 @@ class RestaurantController extends Controller
 
 
         $id = $request->input('id');
-        
+
         // 既存の店舗情報を取得する
         $restaurant = Restaurant::findOrFail($id);
-
 
         // ディレクトリ名
         $dir = 'images';
         // アップロードされたファイル名を取得
-        
-
-        
 
         // 入力されたデータを更新する
         $restaurant->name = $request->input('name');
@@ -193,7 +168,6 @@ class RestaurantController extends Controller
         $restaurant->area_id = $request->input('area');
         $restaurant->genre_id = $request->input('genre');
         $restaurant->content = $request->input('content');
-        // $restaurant-> has_menu = $request->input('has_menu');
 
         // 画像がアップロードされている場合は、新しい画像を保存し、既存の画像を削除する
         if ($request->hasFile('image')) {

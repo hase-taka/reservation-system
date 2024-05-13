@@ -4,7 +4,6 @@
     margin: 0 auto 15px;
 }
 
-
 .my-page__inner-reservation {
     width: 38%;
     margin-left: 7%;
@@ -14,7 +13,6 @@
     font-weight: bold;
     font-size: 24px;
     margin: 0px 0 15px 5px;
-
 }
 
 .reservation-status__inner {
@@ -111,9 +109,7 @@
 }
 
 
-
 .return-page__btn-submit {
-
     border-radius: 5px;
     display: block;
     margin: 0 18px 0 0;
@@ -125,12 +121,12 @@
     text-decoration: none;
     box-shadow: 2px 2px 5px rgb(119, 118, 118);
 }
+
 .return-page__wrap{
     display: flex;
     justify-content: left;
     margin-left: 7%;
 }
-
 
 .reservation-list{
     display: flex;
@@ -141,10 +137,6 @@
 .reservation-table{
     padding-bottom: 15px;
 }
-
-
-
-
 
 
 .my-page__inner-restaurant {
@@ -210,7 +202,6 @@
     background-color: rgb(22, 70, 243);
     text-decoration: none;
     color: #fff;
-    /* font-size: 20px; */
     padding: 2px 12px;
     font-size: 14px;
 }
@@ -223,16 +214,6 @@
     margin-right: 10%;
 
 }
-
-
-
-
-
-
-
-
-
-
 
 
 .modal {

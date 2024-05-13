@@ -17,7 +17,6 @@
         $('.favorite-btn').click(function(){
             var restaurantId = $(this).data('restaurant-id');
             var button = $(this);
-            
             $.ajax({
                 url: '/favorites/toggle/' + restaurantId,
                 method: 'POST',
@@ -40,7 +39,7 @@ $(document).ready(function() {
     // 予約の変更フォームが送信されたときの処理
     $('#editReservationForm').submit(function(event) {
         event.preventDefault();
-        
+
         var reservationId = $('#reservationId').val();
         var date = $('#date').val();
         var time = $('#time').val();
@@ -109,7 +108,6 @@ $(document).ready(function() {
         <div class="reservation-list">
         @if ($reservations->count() > 0)
         @foreach($reservations as $index => $reservation)
-        
             <div class="reservation-status__inner">
                 <div class="reservation-table__header">
                     <div class="reservation-number">
@@ -118,7 +116,6 @@ $(document).ready(function() {
                     </div>
                     <div class="reservation__cancel-btn">
                         <button class="btn btn-danger cancel-reservation" data-reservation-id="{{ $reservation->id }}"><img src="/images/cancel.png" alt="cancel-icon" width="25px" height="25px"></button>
-                        <!-- <button class="reservation__cancel-btn__submit"><img src="img/cancel.png" alt="cancel-icon" width="25px" height="25px"></button> -->
                     </div>
                 </div>
                 <div class="reservation-table">
@@ -141,13 +138,10 @@ $(document).ready(function() {
                         </tr>
                     </table>
                 </div>
-                
             </div>
-            
         @endforeach
         </div>
         @else
                 <p>現在、予約がありません。</p>
         @endif
-    
 @endsection

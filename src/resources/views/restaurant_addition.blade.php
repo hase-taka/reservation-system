@@ -21,9 +21,7 @@
                         <select class="representative_id" name="representative" value="{{ old('representative') }}">
                             <option value="">選択してください</option>
                             @foreach($users as $user)
-                            <!-- @if($user->role_id == 2) -->
                                 <option value="{{ $user->id }}">{{ $user->name }}</option>
-                            <!-- @endif -->
                             @endforeach
                         </select>
                     </td>
@@ -128,7 +126,6 @@
                             @enderror
                         </p>
                     </td>
-                    
                 </tr>
                 <tr class="table-row">
                     <th class="table-head">コース設定</th>
@@ -144,5 +141,4 @@
         </div>
     </form>
 </div>
-
 @endsection
